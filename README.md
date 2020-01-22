@@ -1,4 +1,4 @@
-# MetronResidences-
+# MetronResidences
 Responsive single landing page
 We have a fully designed (with prototype) landing page. The page needs to built as a full standalone page.
 
