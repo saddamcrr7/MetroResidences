@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61 (89581) - https://sketch.com -->
+    <title>Location Pin</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Location-Pin" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(9.000000, 9.000000)">
+            <circle id="Oval" fill-opacity="0.6" fill="#2BB6D6" opacity="0.8" cx="31" cy="31" r="31"></circle>
+            <g id="maps-and-flags" transform="translate(22.000000, 19.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                <path d="M8.625,0 C3.93807469,0 0.125,3.899161 0.125,8.69185434 C0.125,14.6397366 7.73166731,23.3715754 8.05552792,23.7403883 C8.3597231,24.0868419 8.89082698,24.0862325 9.19447208,23.7403883 C9.51833269,23.3715754 17.125,14.6397366 17.125,8.69185434 C17.125,3.899161 13.3118795,0 8.625,0 Z M8.62502412,13 C6.14367266,13 4.125,10.9813007 4.125,8.49997588 C4.125,6.01865102 6.14372089,4 8.62502412,4 C11.1063273,4 13.125,6.01869925 13.125,8.50002412 C13.125,10.981349 11.1063273,13 8.62502412,13 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
