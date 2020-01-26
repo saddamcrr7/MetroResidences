@@ -1,15 +1,7 @@
+$metro-gray: #00000014;
+$metro-teal: #2BB6D6;
+$metro-black: #242424;
 
-$color-blue: #0047b6;
-$color-dark: #000;
-$color-grey: #898989;
-$color-grey-2: #ebebeb;
-$color-red: #ff0000;
-$color-yellow: #ffbb40;
-$color-violet: #6c217e;
-$color-gold: #b3a16e;
-
-$color-primary: $color-blue;
-$color-secondary: $color-grey;
-$color-body: $color-dark;
-$color-danger: $color-red;
-$color-warning: $color-yellow;
+$color-primary: $metro-teal;
+$color-secondary: $metro-gray;
+$color-body: $metro-black;
