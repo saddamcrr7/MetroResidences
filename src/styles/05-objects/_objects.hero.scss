@@ -1,7 +1,8 @@
 .o-hero {
   width: 100%;
-  min-height: 100vh;
+  min-height: 1030px;
   background: $metro-black;
+  position: relative;
 
   &__container {
     position: absolute;
@@ -29,6 +30,32 @@
     object-position: center;
   }
 
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+  }
+
+  &__sub {
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 815px;
+    letter-spacing: 0;
+    color: #FEFEFF;
+    font-size: 24px;
+
+    padding: {
+      left: $grid-gutter-width / 2;
+      right: $grid-gutter-width / 2;
+
+    }
+
+  }
+
   &__title {
     color: $white;
     position: absolute;
@@ -36,11 +63,12 @@
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    opacity: 0;
-  }
-
-  &__title {
     font-size: 100px;
     font-weight: $font-weight-bolder;
   }
 }
+
+#stage-1 {
+  height: 1350px;
+}
+
