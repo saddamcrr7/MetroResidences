@@ -48,7 +48,7 @@
 
   &__title {
     color: $metro-white;
-    position: absolute;
+    position: fixed;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
@@ -59,7 +59,7 @@
   }
 
   &__sub {
-    position: absolute;
+    position: fixed;
     top: 120%;
     left: 50%;
     transform: translate(-50%, -50%);
