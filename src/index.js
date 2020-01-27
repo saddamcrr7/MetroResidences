@@ -29,5 +29,4 @@ const scene = new ScrollMagic.Scene({
 const scene2 = new ScrollMagic.Scene({
   triggerElement: "#o-stage-2",
   triggerHook: 0,
-
 }).setTween(tl1).addTo(controller);
