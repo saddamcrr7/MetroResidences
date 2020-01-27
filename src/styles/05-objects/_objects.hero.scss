@@ -1,11 +1,26 @@
 .o-hero {
-  width: 100%;
-  min-height: 1030px;
   background: $metro-black;
-  position: relative;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -200px;
+    z-index: 1;
+    background: $metro-black;
+    opacity: 0.5;
+    z-index: 1;
+  }
 
   &__container {
-    position: absolute;
+    position: fixed;
     top: 50%;
     right: 0;
     left: 0;
@@ -20,7 +35,7 @@
     left: -2450px;
     bottom: 0;
     z-index: 1;
-    transform: scale(1.08);
+    transform: scale(2);
   }
 
   &__banner-image {
@@ -30,12 +45,17 @@
     object-position: center;
   }
 
-  &__content {
+
+  &__title {
+    color: $metro-white;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 100vh;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    font-size: 100px;
+    font-weight: $font-weight-bolder;
+    margin-bottom: 0;
   }
 
   &__sub {
@@ -44,9 +64,13 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 815px;
+    line-height: 36px;
     letter-spacing: 0;
-    color: #FEFEFF;
+    color: $metro-white;
+    font-weight: $font-weight-heavy;
     font-size: 24px;
+    text-align: center;
+    z-index: 2;
 
     padding: {
       left: $grid-gutter-width / 2;
@@ -55,20 +79,5 @@
     }
 
   }
-
-  &__title {
-    color: $white;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    font-size: 100px;
-    font-weight: $font-weight-bolder;
-  }
-}
-
-#stage-1 {
-  height: 1350px;
 }
 
