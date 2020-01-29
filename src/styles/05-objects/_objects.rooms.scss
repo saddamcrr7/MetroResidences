@@ -7,6 +7,7 @@
     z-index: 2;
     background: $metro-black;
     opacity: 0;
+    pointer-events: none;
 
     &__wrapper {
         display: flex;

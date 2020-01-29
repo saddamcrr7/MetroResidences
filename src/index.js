@@ -43,7 +43,8 @@ tl1.to(".o-hero__title", 1, {
 
 const tl2 = new TimelineMax();
 tl2.to('.o-rooms', 1, {
-  opacity: 1
+  opacity: 1,
+  pointerEvents: 'auto'
 })
 
 const tl3 = new TimelineMax();
