@@ -52,10 +52,13 @@ tl3.to('.c-room--1', 1, {
   width: '100%',
   borderRadius: 0,
   ease: "power2.out",
-}).to('.c-room--1 .c-room__title', 1, {
-  top: 60,
-  left: 60,
+}).to('.c-room--1 .c-room__content', 1, {
+  top: 70,
+  left: 50,
   transform: `translate(0, 0)`,
+  ease: "power2.out"
+}, '-=1').to('.c-room--1 .c-room__sub', 1, {
+  opacity: 1,
   ease: "power2.out"
 }, '-=1')
 

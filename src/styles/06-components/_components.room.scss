@@ -21,10 +21,10 @@
         @include object-fit(cover);
     }
 
-    &__title , &__sub{
+    &__content{
         position: absolute;
-        top: 50%;
-        left: 50%;
+        top: 55%;
+        left: 80%;
         transform: translate(-50%, -50%);
         z-index: 2;
     }
@@ -34,6 +34,12 @@
         font-size: 72px;
         letter-spacing: -0.14px;
         font-weight: $font-weight-bold;
+    }
+
+    &__sub {
+        color: $metro-white;
+        font-size: 16px;
+        line-height: 26px;
     }
 
     &--1 {
@@ -49,6 +55,7 @@
         display: block;
 
         #{$root}__sub {
+            width: 670px;
             opacity: 0;
         }
     }
