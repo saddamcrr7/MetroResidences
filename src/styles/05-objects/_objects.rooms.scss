@@ -1,15 +1,31 @@
 .o-rooms {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    background: $metro-black;
-    opacity: 0;
-    pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: $metro-black;
+  opacity: 0;
+  pointer-events: none;
 
-    &__wrapper {
-        display: flex;
-    }
+  &__container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    margin: auto;
+    top: 0px !important;
+    left: 0px !important;
+    max-width: 100vw;
+  }
+
+  &__wrapper {
+    width: 500%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: calc(100% - 477px);
+  }
 }

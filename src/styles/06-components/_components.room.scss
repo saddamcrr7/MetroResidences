@@ -4,7 +4,8 @@
     position: relative;
     width: 960px;
     height: 560px;
-    display: none;
+    margin-left: 80px;
+    // display: none;
 
     &__bg {
         position: absolute;
@@ -53,6 +54,7 @@
         border-radius: 1920px;
         overflow: hidden;
         display: block;
+        margin-left: 0;
 
         #{$root}__sub {
             width: 670px;
