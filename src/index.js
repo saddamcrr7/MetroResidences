@@ -29,10 +29,10 @@ tl.staggerFrom(".o-hero__title", 1, {
     left: '-1600px'
   }, '-=1')
 
-  const scene = new ScrollMagic.Scene({
-    triggerElement: "#o-stage-1",
-    triggerHook: 0,
-  }).setTween(tl).addTo(controller);
+const scene = new ScrollMagic.Scene({
+  triggerElement: "#o-stage-1",
+  triggerHook: 0,
+}).setTween(tl).addTo(controller);
 
 
 
@@ -48,11 +48,11 @@ tl1.to(".o-hero__title", 1, {
     left: '-1600px'
   }, '-=1')
 
-  const scene1 = new ScrollMagic.Scene({
-    triggerElement: "#o-stage-2",
-    triggerHook: 0,
-  }).setTween(tl1).addTo(controller);
-  
+const scene1 = new ScrollMagic.Scene({
+  triggerElement: "#o-stage-2",
+  triggerHook: 0,
+}).setTween(tl1).addTo(controller);
+
 
 const tl2 = new TimelineMax();
 tl2.to('.o-rooms', 1, {
@@ -69,8 +69,8 @@ const scene2 = new ScrollMagic.Scene({
 
 const tl3 = new TimelineMax();
 tl3.to('.c-room--1', 1, {
-  width: '100%',
-  height: '100%',
+  width: '100vw',
+  height: '100vh',
   borderRadius: 0,
   ease: "power2.out",
 }).to('.c-room--1 .c-room__content', 1, {
@@ -91,7 +91,14 @@ const scene3 = new ScrollMagic.Scene({
 
 
 const tl4 = new TimelineMax();
-tl4.to('.c-room--1', 1, { width: '790px', height: '560px', left: '50vw', transform: 'translateX(-0px) matrix(1, 0, 0, 1, 0, 2)'})
+tl4.to('.c-room--1', 1, {
+  width: '960px',
+  height: '560px',
+}).to('.c-room--1', 0, {
+  left: '98vh',
+  height: '560px',
+})
+
 
 const scene4 = new ScrollMagic.Scene({
   triggerElement: "#o-stage-5",
@@ -102,7 +109,13 @@ const scene4 = new ScrollMagic.Scene({
 TweenLite.defaultEase = Linear.easeNone;
 
 const tl5 = new TimelineMax();
-tl5.to('.o-rooms__wrapper', 1, {xPercent: -10}, "label1").to(".o-rooms__wrapper", 1, {xPercent: -20}, "label2").to(".o-rooms__wrapper", 1, {xPercent: -30}, "label3");;
+tl5.to('.o-rooms__wrapper', 1, {
+  transform: 'translateX(-10%)',
+}, "label1").to(".o-rooms__wrapper", 1, {
+  transform: 'translateX(-20%)'
+}, "label2").to(".o-rooms__wrapper", 1, {
+  transform: 'translateX(-30%)'
+}, "label3")
 
 const scene5 = new ScrollMagic.Scene({
   triggerElement: "#o-stage-6",

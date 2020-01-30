@@ -10,14 +10,13 @@
   pointer-events: none;
 
   &__container {
-    width: 100%;
+    width: 100vw;
     height: 100%;
     overflow: hidden;
     position: fixed;
     margin: auto;
     top: 0px !important;
     left: 0px !important;
-    max-width: 100vw;
   }
 
   &__wrapper {
@@ -27,5 +26,6 @@
     align-items: center;
     justify-content: flex-start;
     padding-left: calc(100% - 477px);
+
   }
 }
