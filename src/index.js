@@ -95,7 +95,7 @@ tl4.to('.c-room--1', 1, {
   width: '960px',
   height: '560px',
 }).to('.c-room--1', 0, {
-  left: '98vh',
+  left: '50vw',
   height: '560px',
 })
 
@@ -120,5 +120,5 @@ tl5.to('.o-rooms__wrapper', 1, {
 const scene5 = new ScrollMagic.Scene({
   triggerElement: "#o-stage-6",
   triggerHook: "onLeave",
-  duration: "100%"
+  duration: "200%"
 }).setPin(".o-rooms__container").setTween(tl5).addTo(controller);
