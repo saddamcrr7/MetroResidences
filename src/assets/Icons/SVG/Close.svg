@@ -12,9 +12,9 @@
                 <mask id="mask-2" fill="white">
                     <use xlink:href="#path-1"></use>
                 </mask>
-                <use id="Mask" fill="#000000" xlink:href="#path-1"></use>
-                <rect id="Rectangle" stroke="#979797" fill="#D8D8D8" mask="url(#mask-2)" x="0.5" y="168.5" width="59" height="59"></rect>
-                <g id="Solids/Primary/Metro-Black" mask="url(#mask-2)" fill="#242424">
+                <use id="Mask" fill="#fff" xlink:href="#path-1"></use>
+                <rect id="Rectangle" stroke="#fff" fill="#fff" mask="url(#mask-2)" x="0.5" y="168.5" width="59" height="59"></rect>
+                <g id="Solids/Primary/Metro-Black" mask="url(#mask-2)" fill="#fff">
                     <g transform="translate(-10.000000, -10.000000)" id="colour/metro-black">
                         <rect x="0" y="0" width="80" height="80"></rect>
                     </g>
