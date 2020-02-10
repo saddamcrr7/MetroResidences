@@ -7,6 +7,8 @@
   width: 960px;
   height: 560px;
   display: none;
+  cursor: pointer;
+  background: $metro-white;
 
   &__overlay {
     position: absolute;
@@ -26,6 +28,12 @@
     right: 0;
     bottom: 0;
     z-index: 1;
+    opacity: 0;
+    @include basic-transition(opacity, 3s);
+
+    &.is-active {
+      opacity: 1;
+    }
   }
 
   &__bg-image {
@@ -84,6 +92,7 @@
         left: 50%;
         z-index: 4;
         transform: translate(-50%, -50%);
+        pointer-events: none;
       }
 
       &__price-wrap {
@@ -91,6 +100,7 @@
         left: 16px;
         bottom: 16px;
         z-index: 4;
+        pointer-events: none;
       }
 
       &__price-time {
@@ -142,7 +152,61 @@
       &__btn {
         position: absolute;
         left: 40px;
+        width: 285px;
+        text-align: center;
         bottom: 30px;
+        border: none;
+        border-radius: 5px;
+        background: $metro-teal;
+        color: $metro-white;
+        padding: 10px 20px;
+        white-space: nowrap;
+        font-weight: $font-weight-bold;
+        letter-spacing: 0;
+        font-size: 15px;
+      }
+
+      &__dots {
+        position: absolute;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        z-index: 6;
+        opacity: 0;
+        pointer-events: none;
+      }
+
+      &__dot {
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        background: $metro-white;
+        margin: 0 4px;
+        cursor: pointer;
+        transition: width 1s;
+
+
+        &::before {
+          position: absolute;
+          content: '';
+          width: 16px;
+          height: 16px;
+          border-radius: 8px;
+          background: #2BA19A;
+          opacity: 0;
+          transition: width 10s;
+        }
+
+        &.is-active {
+          width: 80px;
+
+          &::before {
+            opacity: 1;
+            width: 80px;
+          }
+
+        }
       }
     }
   }
