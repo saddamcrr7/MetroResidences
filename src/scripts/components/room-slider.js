@@ -61,6 +61,7 @@ export default class roomSlider {
 
   stop() {
     clearInterval(this.timer)
+    this.sliderDots[0].classList.remove('is-active')
   }
 
   init() {

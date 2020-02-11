@@ -9,6 +9,7 @@
   display: none;
   cursor: pointer;
   background: $metro-white;
+  box-shadow: 0 0 20px rgba($metro-black, 0.3);
 
   &__overlay {
     position: absolute;
@@ -124,7 +125,7 @@
         left: 0;
         width: 0px;
         overflow: hidden;
-        background: rgba(#2A2733, 0.7);
+        background: rgba(#2A2733, 0.5);
         z-index: 3;
       }
 
@@ -141,12 +142,39 @@
         color: $metro-white;
         line-height: 15px;
         cursor: pointer;
+        margin-bottom: 130px;
 
         img {
           width: 16px;
           height: 16px;
           margin-right: 7px;
         }
+      }
+
+      &__features {
+        color: $metro-white;
+        margin-bottom: 25px;
+      }
+
+      &__features-title {
+        font-size: 18px;
+        font-weight: $font-weight-bold;
+        margin-bottom: 8px;
+      }
+
+      &__features-row{
+        width: 316px;
+        @include make-row();
+      }
+
+      &__features-col {
+        @include make-col-ready();
+        @include make-col(6);
+      }
+
+      &__feature {
+        font-size: 15px;
+        margin-bottom: 5px;
       }
 
       &__btn {
@@ -245,6 +273,10 @@
   }
 
   &--6 {
-    left: 5580px;
+    left: 5630px;
+  }
+
+  &--7 {
+    left: 6680px;
   }
 }

@@ -123,7 +123,8 @@ const roomsScetion = () => {
           ease: "sine.out"
         }).to(roomTitle, 0.7, {
           top: 100,
-          left: 167,
+          left: 38,
+          transform: 'translate(0,-50%)',
           ease: "sine.out"
         }, '-=0.7').to(priceWrap, 0.7, {
           bottom: 110,
