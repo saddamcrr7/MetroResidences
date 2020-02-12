@@ -8,7 +8,7 @@ const facilitiesSection = () => {
   tl7.to('.o-facilities', 1, {
     opacity: 1,
     pointerEvents: 'auto'
-  })
+  }).to('.o-security', 0, {display: 'block'})
 
   const scene7 = new ScrollMagic.Scene({
     triggerElement: "#o-stage-7",
