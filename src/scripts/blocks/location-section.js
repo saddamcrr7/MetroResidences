@@ -21,11 +21,18 @@ const locationSction = () => {
 
 
   const tl12 = new TimelineMax();
-  tl12.to('.o-location__map-container', 0.5, {
-    width: '100%',
-    height: '100%',
-    borderRadius: 0
-  })
+  tl12.to('.o-location__map-container', 0.7, {
+      width: '100%',
+      height: '100%',
+      borderRadius: 0
+    }).to('.o-location__sidebar', 0.7, {
+      left: 0
+    }, '-=0.7')
+    .to('.o-location__title', 0.7, {
+      left: 50,
+      top: 40,
+      transform: 'transform: translate(0, 0);'
+    }, '-=0.7')
 
   const scene12 = new ScrollMagic.Scene({
     triggerElement: "#o-stage-12",
