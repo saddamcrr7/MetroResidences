@@ -1,0 +1,89 @@
+.o-community {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $white;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0;
+
+  &__content {
+    position: absolute;
+    top: 55%;
+    left: 57%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    overflow: hidden;
+    width: 670px;
+  }
+
+  &__title {
+    color: $metro-white;
+    font-size: 72px;
+    letter-spacing: -0.14px;
+    font-weight: $font-weight-bold;
+  }
+
+  &__sub {
+    color: $metro-white;
+    font-size: 16px;
+    line-height: 26px;
+    opacity: 0;
+  }
+
+  &__intro-container {
+    position: absolute;
+    top: 52.2%;
+    left: 238px;
+    width: 883px;
+    min-height: 108px;
+    transform: translateY(-50%);
+    z-index: 4;
+  }
+
+  &__intro {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    overflow: hidden;
+  }
+
+  &__intro-text {
+    white-space: nowrap;
+    color: $metro-black;
+    font-size: 72px;
+    letter-spacing: -0.14px;
+    font-weight: $font-weight-bold;
+    
+  }
+
+  &__image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    z-index: 2;
+    opacity: 0;
+  }
+
+  &__image {
+    @include object-fit(cover);
+    overflow: hidden;
+
+    &--intro {
+      width: 760px;
+      height: 760px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 400px;
+    }
+  }
+}
