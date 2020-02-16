@@ -73,7 +73,7 @@ const communitySction = () => {
   }, '-=1.5').to('.o-community__image--right-2', 1, {
     transform: 'translateY(0)',
     filter: 'blur(0px)',
-  }, '-=1.5')
+  }, '-=1.5').to('.o-last-page', 0,{display: 'block'})
 
 
   const scene15 = new ScrollMagic.Scene({
