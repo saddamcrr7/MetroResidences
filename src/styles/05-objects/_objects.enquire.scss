@@ -1,0 +1,42 @@
+.o-enquire {
+
+  &__container {
+    @include media-breakpoint-up(md) {
+      margin-left: 80px;
+    }
+
+    @include make-container();
+    max-width: 1557px;
+    padding-top: 60px;
+    padding-bottom: 90px;
+  }
+
+  &__col {
+    &--left {
+      @include make-col(5.7);
+    }
+
+    &--right {
+      @include make-col(6.3);
+    }
+  }
+
+  &__form-col {
+      @include make-col(6);
+  }
+
+  &__title {
+    color: $metro-black;
+    font-size: 72px;
+    font-weight: $font-weight-bolder;
+    letter-spacing: -0.14px;
+  }
+
+
+  &__sub {
+    color: $metro-black;
+    font-size: 16px;
+    letter-spacing: 0;
+    margin-bottom: 29px;
+  }
+}

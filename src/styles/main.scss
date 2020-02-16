@@ -59,9 +59,12 @@
 @import '05-objects/objects.security';
 @import '05-objects/objects.location';
 @import '05-objects/objects.community';
+@import '05-objects/objects.last-page';
+@import '05-objects/objects.enquire';
 
 // 06. Components
 @import '06-components/components.alert';
+@import '06-components/components.input';
 @import '06-components/components.button';
 @import '06-components/components.room';
 @import './06-components/components.transportation'
