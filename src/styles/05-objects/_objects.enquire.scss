@@ -7,8 +7,8 @@
 
     @include make-container();
     max-width: 1557px;
-    padding-top: 60px;
-    padding-bottom: 90px;
+    padding-top: 40px;
+    padding-bottom: 70px;
   }
 
   &__col {
@@ -38,5 +38,11 @@
     font-size: 16px;
     letter-spacing: 0;
     margin-bottom: 29px;
+  }
+
+  &__illustrations {
+      height: 300px;
+      overflow: hidden;
+    //   have to fix this svg
   }
 }
