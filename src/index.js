@@ -8,6 +8,10 @@ import communitySction from './scripts/blocks/community-section'
 import lastPage from './scripts/blocks/last-page'
 import enquire from './scripts/blocks/enquire'
 
+window.onbeforeunload = () => {
+  window.scrollTo(0, 0);
+}
+
 heroSction()
 roomsScetion()
 facilitiesSection()
