@@ -1,0 +1,32 @@
+.c-contact-btn {
+    $root: &;
+
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: map-get($z-layers, header);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    cursor: pointer;
+    width: 80px;
+    overflow: hidden;
+    white-space: nowrap;
+
+    &__text {
+        color: $metro-white;
+        font-size: 16px;
+        font-weight: $font-weight-bold;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    &:hover {
+        width: auto;
+        #{$root}__text {
+            opacity: 1;
+        }
+    }
+
+    &__image {}
+}
