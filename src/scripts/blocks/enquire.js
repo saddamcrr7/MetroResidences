@@ -3,47 +3,43 @@ const enquire = () => {
     autoApply: true
   });
 
-  const roomInput = document.querySelector('.o-enquire__input--room-type')
-  if (roomInput) {
+  const roomInputs = document.querySelectorAll('.o-enquire__input--room-type')
+  if (roomInputs) {
+    roomInputs.forEach((roomInput, i) => {
+      
+      const inputDropdown = document.querySelectorAll('.c-input__dropdown')
 
-    // input dropDown
-    const inputDropdown = document.querySelector('.c-input__dropdown')
-
-    if (inputDropdown) {
-      let blurEvent = 1
-      const inputDropdownItems = inputDropdown.querySelectorAll(
-        '.c-input__dropdown-item')
-
-      roomInput.addEventListener('focus', () => {
-        inputDropdown.classList.add('is-active')
-      })
-
-      inputDropdownItems.forEach(inputDropdownItem => {
-        inputDropdownItem.addEventListener('click', () => {
-          inputDropdown.classList.remove('is-active')
-          roomInput.value = inputDropdownItem.dataset.value
+      if (inputDropdown) {
+        let blurEvent = 1
+        const inputDropdownItems = inputDropdown[i].querySelectorAll(
+          '.c-input__dropdown-item')
+  
+        roomInput.addEventListener('focus', () => {
+          inputDropdown[i].classList.add('is-active')
         })
-      })
-
-      inputDropdown.addEventListener('mouseenter', () => {
-        blurEvent = 0
-
-      })
-
-      inputDropdown.addEventListener('mouseleave', () => {
-        blurEvent = 1
-      })
-
-      roomInput.addEventListener('blur', () => {
-          if(blurEvent) 
-            inputDropdown.classList.remove('is-active')
-      })
-
-
-
-    }
-
-
+  
+        inputDropdownItems.forEach(inputDropdownItem => {
+          inputDropdownItem.addEventListener('click', () => {
+            inputDropdown[i].classList.remove('is-active')
+            roomInput.value = inputDropdownItem.dataset.value
+          })
+        })
+  
+        inputDropdown[i].addEventListener('mouseenter', () => {
+          blurEvent = 0
+  
+        })
+  
+        inputDropdown[i].addEventListener('mouseleave', () => {
+          blurEvent = 1
+        })
+  
+        roomInput.addEventListener('blur', () => {
+            if(blurEvent) 
+              inputDropdown[i].classList.remove('is-active')
+        })
+      }
+    })
   }
 
 }
