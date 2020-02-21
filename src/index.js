@@ -11,12 +11,16 @@ import enquire from './scripts/blocks/enquire'
 window.onbeforeunload = () => {
   window.scrollTo(0, 0);
 }
+document.addEventListener("DOMContentLoaded", (event)=> {
+    window.onload = ()=> {
+        heroSction()
+        roomsScetion()
+        facilitiesSection()
+        securitySection()
+        communitySction()
+        enquire()
+        lastPage()
+    }
+})
 
-heroSction()
-roomsScetion()
-facilitiesSection()
-securitySection()
 locationSction()
-communitySction()
-enquire()
-lastPage()
