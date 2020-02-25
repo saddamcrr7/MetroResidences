@@ -1,7 +1,14 @@
 import initMap from '../components/map'
+import Transportation from '../components/transportation'
 import controller from '../util/ScrollMagic'
 
 const locationSction = () => {
+  new Transportation('.c-transportation__wrapper', {
+    triggerElement: '.c-transportation__title',
+    wrapperElement: '.c-transportation__content-wrapper',
+    innerElement: '.c-transportation__content'
+  })
+
   window.initMap = initMap;
 
   const tl11 = new TimelineMax();
