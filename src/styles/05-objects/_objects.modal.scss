@@ -10,6 +10,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
 
   &__backdrop {
     position: absolute;
@@ -32,6 +35,29 @@
     padding: 60px;
   }
 
+  &__header {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  &__close {
+    width: 0px;
+    height: 34px;
+    cursor: pointer;
+    @include basic-transition(transform, 0.4s);
+    overflow: hidden;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__close-icon {
+    width: 100%;
+    height: auto;
+  }
+
   .o-enquire {
     width: 100%;
 
@@ -47,7 +73,7 @@
   }
 
   &.is-active {
-    transform: translate(-50%, -50%);
     pointer-events: auto;
+    opacity: 1;
   }
 }

@@ -1,5 +1,6 @@
 import controller from '../util/ScrollMagic'
 import roomSlider from '../components/room-slider'
+import MetroModal from '../components/modal'
 
 const roomsScetion = () => {
   const tl2 = new TimelineMax();
@@ -158,6 +159,12 @@ const roomsScetion = () => {
       })
     })
 
+  })
+
+  const romeModal = new MetroModal('.o-modal', {
+    openBtn: '.c-room__btn',
+    closeBtn: '.o-modal__close--2',
+    roomTypeInputElm: '.o-enquire__input--room-type'
   })
 }
 
