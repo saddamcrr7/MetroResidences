@@ -1,7 +1,11 @@
 import MetroModal from '../components/modal'
 
 const enquire = () => {
-  $('.o-enquire__input--date').daterangepicker({
+  $('.o-last-page .o-enquire__input--date').daterangepicker({
+    autoApply: true
+  });
+
+  $('.o-modal .o-enquire__input--date').daterangepicker({
     autoApply: true
   });
 
@@ -44,8 +48,6 @@ const enquire = () => {
       }
     })
   }
-
-
 
   const enquireModal = new MetroModal('.o-modal', {
     openBtn: '.c-contact-btn',

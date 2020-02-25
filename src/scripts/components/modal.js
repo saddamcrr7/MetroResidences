@@ -18,8 +18,8 @@ class MetroModal {
       this.options[prop] = options[prop]
     }
 
-    this.roomTypeInput = document.querySelector(this.options.roomTypeInputElm)
-
+    this.roomTypeInputs = document.querySelectorAll(this.options
+      .roomTypeInputElm)
     this.init()
   }
 
@@ -32,43 +32,43 @@ class MetroModal {
   }
 
   getRoomType(getElm) {
-    this.options.roomType = getElm.dataset.roomtype
+    if (this.roomTypeInputs.length) {
+      this.options.roomType = getElm.dataset.roomType
+    }
   }
 
   addRoomType() {
-    this.roomTypeInput.dataset.value = this.options.roomType 
-    console.log(this.roomTypeInput.value);
-
+    if (this.roomTypeInputs.length) {
+      this.roomTypeInputs[1].value = this.options.roomType
+    }
   }
 
   removeRoomType() {
-    this.roomTypeInput.value = ''
+    if (this.roomTypeInputs.length) {
+      this.roomTypeInputs[1].value = ''
+    }
   }
 
   open() {
     this.toggle()
     this.isActive = !0
-
     this.addRoomType()
-
   }
 
   close() {
     this.toggle()
     this.isActive = 0
+    this.removeRoomType()
   }
 
   init() {
     const closeBtns = document.querySelectorAll(this.options.closeBtn)
-
     const openBtns = document.querySelectorAll(this.options.openBtn)
+
     openBtns.forEach(openBtn => {
       openBtn.addEventListener('click', () => {
-    this.getRoomType(openBtn)
-
+        this.getRoomType(openBtn)
         this.open()
-
-        
 
         closeBtns.forEach(closeBtn => {
           closeBtn.style.width = '34px'
@@ -82,9 +82,6 @@ class MetroModal {
         this.close()
       })
     })
-
-
-    
   }
 }
 
