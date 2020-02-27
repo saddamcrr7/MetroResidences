@@ -43,13 +43,13 @@ const facilitiesSection = () => {
   tl9.to('.o-facilities__list', 0.5, {
     opacity: 1,
     pointerEvents: 'auto'
-  }).to('.o-facilities__nav', 1, {
+  }).to('.o-facilities__nav', 0.7, {
     top: 0,
     left: 0
-  }, '-=0.3').to('.o-facilities__image-contrainer', 1, {
+  }, '-=0.5').to('.o-facilities__image-contrainer', 0.7, {
     bottom: 0,
     right: 0
-  }, '-=1')
+  }, '-=0.7')
 
 
   const scene9 = new ScrollMagic.Scene({

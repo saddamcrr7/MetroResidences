@@ -78,7 +78,7 @@
     &.is-active {
 
       &::before {
-        bottom: 0;
+        bottom: 10px;
       }
 
       #{$root}__title {

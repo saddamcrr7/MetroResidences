@@ -37,13 +37,13 @@ const communitySction = () => {
     transform: 'translate(0, 0)',
     top: 150,
     left: 900
-  }, '-=0.8').to('.o-community__image--left-1', 0.5, {
+  }, '-=1').to('.o-community__image--left-1', 0.5, {
     opacity: 1,
     scale: 1
-  }, '-=0.5').to('.o-community__image--middle-1', 0.5, {
+  }, '-=1').to('.o-community__image--middle-1', 0.5, {
     opacity: 1,
     scale: 1
-  }, '-=0.5')
+  }, '-=1')
 
   const scene14 = new ScrollMagic.Scene({
     triggerElement: "#o-stage-14",
@@ -84,7 +84,7 @@ const communitySction = () => {
   const tl16 = new TimelineMax();
 
   tl16.to('.o-community__image--left-2', 1, {
-    filter: 'blur(2px)',
+    filter: 'blur(3px)',
     transform: 'translateY(-800px)'
   }).to('.o-community__image--middle-3', 1, {
     filter: 'blur(5px)',

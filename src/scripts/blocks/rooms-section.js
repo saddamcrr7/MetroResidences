@@ -4,34 +4,34 @@ import MetroModal from '../components/modal'
 
 const roomsScetion = () => {
   const tl2 = new TimelineMax();
-  tl2.to('.o-rooms', 1, {
+  tl2.to('.o-rooms', 0.7, {
     opacity: 1,
     pointerEvents: 'auto'
   })
 
   const scene2 = new ScrollMagic.Scene({
     triggerElement: "#o-stage-3",
-    triggerHook: 0,
+    triggerHook: 0, 
   }).setTween(tl2).addTo(controller);
 
   const tl3 = new TimelineMax();
-  tl3.to('.c-room--1', 1, {
+  tl3.to('.c-room--1', 0.7, {
     width: '100vw',
     height: '100vh',
     left: 0,
     borderRadius: 0,
     ease: "power2.out",
-  }).to('.c-room--1 .c-room__overlay', 1, {
+  }).to('.c-room--1 .c-room__overlay', 0.7, {
     opacity: 0
-  }, '-=1').to('.c-room--1 .c-room__content', 1, {
+  }, '-=0.7').to('.c-room--1 .c-room__content', 0.7, {
     top: 70,
     left: 50,
     transform: `translate(0, 0)`,
     ease: "power2.out"
-  }, '-=1').to('.c-room--1 .c-room__sub', 1, {
+  }, '-=0.7').to('.c-room--1 .c-room__sub', 0.7, {
     opacity: 1,
     ease: "power2.out"
-  }, '-=1').to('.o-rooms', 0.5, {
+  }, '-=0.7').to('.o-rooms', 0.5, {
     background: '#FEFEFF'
   }).to('.c-room', 0, {
     display: 'block'
@@ -92,7 +92,6 @@ const roomsScetion = () => {
   const xRight = () => {
     const romosWrapper = document.querySelector('.o-rooms__wrapper')
     return Number(romosWrapper.clientWidth) - (xLeft() + window.innerWidth)
-
   }
 
   const rooms = document.querySelectorAll('.c-room')
@@ -121,26 +120,27 @@ const roomsScetion = () => {
           right: `${ xRight()}px`,
           width: '100vw',
           height: '100%',
-          ease: "sine.out"
+          ease: "circ.out"
         }).to(roomTitle, 0.7, {
-          top: 100,
+          top: 124,
           left: 38,
+          fontSize: '72px',
           transform: 'translate(0,-50%)',
-          ease: "sine.out"
+          ease: "circ.out"
         }, '-=0.7').to(priceWrap, 0.7, {
           bottom: 110,
           left: 40,
-          ease: "sine.out"
+          ease: "circ.out"
         }, '-=0.7').to(sidebar, 0.7, {
           width: 367
         }).to(overlay, 0.7, {
           opacity: 0,
           pointerEvents: 'none',
-          ease: "sine.out"
+          ease: "circ.out"
         }, '-=01').to('.c-room__dots', 0.7, {
           opacity: 1,
           pointerEvents: 'auto'
-        } )
+        },'-=0.7' )
 
         function stopAll () {
           tl6.reverse()
@@ -154,14 +154,13 @@ const roomsScetion = () => {
         window.addEventListener('scroll', () => {
           stopAll()
         })
-
-       
+      
       })
     })
 
   })
 
-  const romeModal = new MetroModal('.o-modal', {
+  const roomModal = new MetroModal('.o-modal', {
     openBtn: '.c-room__btn',
     closeBtn: '.o-modal__close--2',
     roomTypeInputElm: '.o-enquire__input--room-type'

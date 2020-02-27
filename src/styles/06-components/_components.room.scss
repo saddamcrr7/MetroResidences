@@ -54,7 +54,7 @@
 
   &__title {
     color: $metro-white;
-    font-size: 72px;
+    font-size: 100px;
     letter-spacing: -0.14px;
     font-weight: $font-weight-bold;
 
@@ -84,6 +84,7 @@
         &.is-active {
           opacity: 1;
           pointer-events: auto;
+          cursor: auto;
         }
       }
 
@@ -127,6 +128,7 @@
         overflow: hidden;
         background: rgba(#2A2733, 0.5);
         z-index: 3;
+        cursor: auto;
       }
 
       &__sidebar-container {
@@ -162,7 +164,7 @@
         margin-bottom: 8px;
       }
 
-      &__features-row{
+      &__features-row {
         width: 316px;
         @include make-row();
       }
@@ -244,16 +246,25 @@
     width: 760px;
     height: 760px;
     z-index: 4;
-    border-radius: 1920px;
+    border-radius: 400px;
     overflow: hidden;
     display: block;
     pointer-events: none;
     display: block;
 
+    #{$root}__title {
+      font-size: 72px;
+
+      &--fixed {
+        font-size: 100px;
+      }
+    }
+
     #{$root}__sub {
       width: 670px;
       opacity: 0;
     }
+
   }
 
   &--2 {

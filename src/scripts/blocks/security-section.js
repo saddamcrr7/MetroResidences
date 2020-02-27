@@ -2,7 +2,7 @@ import controller from '../util/ScrollMagic'
 
 const securitySection = () => {
   const tl10 = new TimelineMax();
-  tl10.to('.o-facilities', 1, {
+  tl10.to('.o-facilities', 0.7, {
       transform: 'translateY(-100%)'
     }).from('.o-security__title', 0.7, {
       transform: 'translateY(-70px)'

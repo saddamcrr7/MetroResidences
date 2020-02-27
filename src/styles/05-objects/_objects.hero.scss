@@ -1,22 +1,21 @@
 .o-hero {
   background: $metro-black;
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 50px;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 1;
 
-  &::before {
-    content: '';
+  &__overlay{
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: -200px;
+    bottom: 0;
     z-index: 1;
     background: $metro-black;
-    opacity: 0.5;
+    opacity: 0;
     z-index: 1;
   }
 
@@ -52,6 +51,7 @@
     position: fixed;
     left: 50%;
     top: 50%;
+    white-space: nowrap;
     transform: translate(-50%, -50%);
     z-index: 2;
     font-size: 100px;
