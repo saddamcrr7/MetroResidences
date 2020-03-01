@@ -78,7 +78,7 @@ const roomsScetion = () => {
   const scene5 = new ScrollMagic.Scene({
     triggerElement: "#o-stage-6",
     triggerHook: "onLeave",
-    duration: "200%"
+    duration: "400%"
   }).setPin(".o-rooms__container").setTween(tl5).addTo(controller);
 
 

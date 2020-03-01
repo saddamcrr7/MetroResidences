@@ -3,7 +3,8 @@ import controller from '../util/ScrollMagic'
 const lastPage = () => {
     const tl17 = new TimelineMax();
     tl17.to('.o-community', 1, {
-      transform: 'translateY(-100%)'
+      transform: 'translateY(-100%)',
+      ease: "circ.out",
     })
 
     const scene17 = new ScrollMagic.Scene({

@@ -14,11 +14,13 @@ const locationSction = () => {
   const tl11 = new TimelineMax();
   tl11.to('.o-location', 0.4, {
     opacity: 1,
-    pointerEvents: 'auto'
+    pointerEvents: 'auto',
+    ease: "circ.out",
   }).to('.o-location__map-container', 0.2, {
     width: 760,
     height: 760,
-    display: 'block'
+    display: 'block',
+    ease: "circ.out",
   }, '-=0.1')
 
   const scene11 = new ScrollMagic.Scene({
@@ -31,14 +33,20 @@ const locationSction = () => {
   tl12.to('.o-location__map-container', 0.7, {
       width: '100%',
       height: '100%',
-      borderRadius: 0
+      borderRadius: 0,
+      ease: "circ.out",
+
     }).to('.o-location__sidebar', 0.7, {
-      left: 0
+      left: 0,
+      ease: "circ.out",
+
     }, '-=0.7')
     .to('.o-location__title', 0.7, {
       left: 50,
       top: 40,
-      transform: 'transform: translate(0, 0);'
+      transform: 'transform: translate(0, 0);',
+      ease: "circ.out",
+
     }, '-=0.7')
 
   const scene12 = new ScrollMagic.Scene({

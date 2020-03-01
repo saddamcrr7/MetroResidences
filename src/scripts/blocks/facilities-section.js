@@ -7,6 +7,7 @@ const facilitiesSection = () => {
   const tl7 = new TimelineMax();
   tl7.to('.o-facilities', 1, {
     opacity: 1,
+    ease: "circ.out",
     pointerEvents: 'auto'
   }).to('.o-security', 0, {display: 'block'})
 
@@ -20,15 +21,14 @@ const facilitiesSection = () => {
   tl8.to('.o-facilities__hero', 1, {
     width: '100%',
     height: '100%',
-    ease: "power2.out",
+    ease: "circ.out",
   }).to('.o-facilities__content', 1, {
-    top: 40,
-    left: 40,
-    transform: `translate(0, 0)`,
-    ease: "power2.out"
+    top: 118,
+    left: 376,
+    ease: "circ.out",
   }, '-=1').to('.o-facilities__sub', 1, {
     opacity: 1,
-    ease: "power2.out"
+    ease: "circ.out",
   }, '-=1')
 
   const scene8 = new ScrollMagic.Scene({
@@ -42,13 +42,16 @@ const facilitiesSection = () => {
 
   tl9.to('.o-facilities__list', 0.5, {
     opacity: 1,
+    ease: "circ.out",
     pointerEvents: 'auto'
   }).to('.o-facilities__nav', 0.7, {
     top: 0,
-    left: 0
+    left: 0,
+    ease: "circ.out",
   }, '-=0.5').to('.o-facilities__image-contrainer', 0.7, {
     bottom: 0,
-    right: 0
+    right: 0,
+    ease: "circ.out",
   }, '-=0.7')
 
 

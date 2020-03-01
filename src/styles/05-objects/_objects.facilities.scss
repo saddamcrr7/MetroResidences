@@ -10,6 +10,7 @@
   pointer-events: none;
 
 
+
   &__hero {
     width: 760px;
     height: 760px;
@@ -47,6 +48,8 @@
     z-index: 3;
     overflow: hidden;
     width: -webkit-fill-available;
+    max-width: 670px;
+    width: 100%;
   }
 
   &__title {
@@ -60,7 +63,6 @@
     color: $metro-white;
     font-size: 16px;
     line-height: 26px;
-    width: 670px;
     opacity: 0;
   }
 
