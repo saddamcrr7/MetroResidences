@@ -6,6 +6,7 @@
   left: 0;
   right: 0;
   z-index: 1;
+  overflow: hidden;
 
   &__overlay{
     position: absolute;
@@ -36,6 +37,12 @@
     bottom: 0;
     z-index: 1;
     transform: scale(1.5);
+
+    @include media-breakpoint-down(md) {
+      left: -1247px;
+      top: -900px;
+      transform: scale(1.4);
+    }
   }
 
   &__banner-image {
@@ -57,6 +64,11 @@
     font-size: 100px;
     font-weight: $font-weight-bolder;
     margin-bottom: 0;
+    text-shadow: 0px 3px 6px #00000029;
+
+    @include media-breakpoint-down(md) {
+      font-size: 80px;
+    }
   }
 
   &__sub {
@@ -65,6 +77,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 815px;
+    width: 100%;
     line-height: 36px;
     letter-spacing: 0;
     color: $metro-white;
@@ -77,6 +90,11 @@
       left: $grid-gutter-width / 2;
       right: $grid-gutter-width / 2;
 
+    }
+
+    @include media-breakpoint-down(md) {
+      max-width: 584px;
+      font-size: 16px;
     }
 
   }
