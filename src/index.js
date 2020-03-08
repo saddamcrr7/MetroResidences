@@ -8,12 +8,13 @@ import communitySction from './scripts/blocks/community-section'
 import lastPage from './scripts/blocks/last-page'
 import enquire from './scripts/blocks/enquire'
 
-window.onbeforeunload = () => {
-  window.scrollTo(0, 0);
-}
+// window.onbeforeunload = () => {
+//   window.scrollTo(0, 0);
+// }
+
 document.addEventListener("DOMContentLoaded", (event)=> {
     window.onload = ()=> {
-        document.querySelector('.o-preloader').style.display = "none"
+        // document.querySelector('.o-preloader').style.display = "none"
         heroSction()
         roomsScetion()
         facilitiesSection()
