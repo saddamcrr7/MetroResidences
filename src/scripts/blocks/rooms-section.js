@@ -19,7 +19,7 @@ const roomsScetion = () => {
   }).setTween(tl2).addTo(controller);
 
   const tl3 = new TimelineMax();
-  
+
   tl3.to('.c-room--1', 0.7, {
     width: '100vw',
     height: '100vh',
@@ -156,16 +156,16 @@ const roomsScetion = () => {
 
   const rooms = document.querySelectorAll('.c-room')
 
-  rooms.forEach(room => {
+  rooms.forEach((room, i) => {
     const overlays = room.querySelectorAll('.c-room__overlay')
 
     overlays.forEach(overlay => {
-
       overlay.addEventListener('click', () => {
+        room.classList.add('is-open')
+
         const nipa = room.querySelector('.c-room__close')
         const roomTitle = room.querySelector('.c-room__title')
-        const priceWrap = room.querySelector(
-          '.c-room__price-wrap')
+        const priceWrap = room.querySelector('.c-room__price-wrap')
         const sidebar = room.querySelector('.c-room__sidebar')
 
         const slideImages = new roomSlider(room)
@@ -213,13 +213,22 @@ const roomsScetion = () => {
           const setRoomWidth = window.innerWidth
           tl6.to(room, 0, {
             zIndex: 5
-          }).to(room, 0.7, {
+          }).to(room, 0, {
             top: `${yTop()}px`,
             bottom: `${yBottom()}px`,
             width: `${setRoomWidth}px`,
             height: `${setRoomHeight}px`,
             ease: "circ.out"
-          })
+          }).to(sidebar, 0, {
+            height: '50%'
+          }).to(roomTitle, 0.7, {
+            top: 86,
+            left: 38,
+            color: '#242424',
+            fontSize: '60px',
+            transform: 'translate(0,-50%)',
+            ease: "circ.out"
+          }, '')
         })
 
 
@@ -227,6 +236,9 @@ const roomsScetion = () => {
         function stopAll() {
           tl6.reverse()
           slideImages.stop()
+          rooms.forEach((room, i) => {
+            room.classList.remove('is-open')
+          })
         }
 
         nipa.addEventListener('click', () => {

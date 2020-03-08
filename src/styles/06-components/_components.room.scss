@@ -9,7 +9,6 @@
   display: none;
   cursor: pointer;
   background: $metro-white;
-  box-shadow: 0 0 20px rgba($metro-black, 0.3);
 
   @include media-breakpoint-down(md) {
     left: 50% !important;
@@ -27,17 +26,21 @@
     background: #2A2733;
     opacity: 0.2;
     z-index: 2;
+    transition: opacity 0.7s;
+
   }
 
   &__bg {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100%;
+    height: 100%;
     z-index: 1;
     opacity: 0;
-    @include basic-transition(opacity, 3s);
+    box-shadow: 0 0 20px rgba($metro-black, 0.3);
+    transition: 0.7s;
+
 
     &.is-active {
       opacity: 1;
@@ -119,16 +122,15 @@
         bottom: 16px;
         z-index: 4;
         pointer-events: none;
+        color: $metro-white;
       }
 
       &__price-time {
-        color: $metro-white;
         font-size: 16px;
         letter-spacing: 0.02px;
       }
 
       &__price {
-        color: $metro-white;
         font-size: 40px;
         letter-spacing: 0.05px;
         line-height: 41px;
@@ -138,18 +140,29 @@
       &__sidebar {
         position: absolute;
         top: 0;
-        bottom: 0;
+        height: 100%;
         left: 0;
         width: 0px;
         overflow: hidden;
         background: rgba(#2A2733, 0.5);
         z-index: 3;
         cursor: auto;
+
+        @include media-breakpoint-down(md) {
+          width: 100%;
+          height: 0;
+          background: $metro-white;
+        }
       }
 
       &__sidebar-container {
         white-space: nowrap;
         padding: 30px 40px;
+
+        @include media-breakpoint-down(md) {
+          padding-top: 130px;
+          display: flex;
+        }
       }
 
       &__close {
@@ -167,11 +180,28 @@
           height: 16px;
           margin-right: 7px;
         }
+
+        @include media-breakpoint-down(md) {
+          color: $metro-black;
+          position: absolute;
+          top: 20px;
+          left: 40px;
+          margin-bottom: 0;
+
+          img {
+            filter: brightness(0.1);
+          }
+        }
       }
 
       &__features {
         color: $metro-white;
         margin-bottom: 25px;
+
+        @include media-breakpoint-down(md) {
+          color: $metro-black;
+          margin-right: 80px;
+        }
       }
 
       &__features-title {
@@ -252,6 +282,21 @@
             width: 80px;
           }
 
+        }
+      }
+    }
+  }
+
+  &.is-open {
+    @include media-breakpoint-down(md) {
+      #{$root} {
+
+        &__bg,
+        &__overlay {
+          top: auto;
+          bottom: 0;
+          height: 50vh;
+          box-shadow: none;
         }
       }
     }
