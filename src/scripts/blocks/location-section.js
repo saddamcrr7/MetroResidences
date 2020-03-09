@@ -1,8 +1,12 @@
 import initMap from '../components/map'
 import Transportation from '../components/transportation'
 import controller from '../util/ScrollMagic'
+import Resposive from '../util/responsive'
+
 
 const locationSction = () => {
+  const locationResposive = new Resposive();
+
   new Transportation('.c-transportation__wrapper', {
     triggerElement: '.c-transportation__title',
     wrapperElement: '.c-transportation__content-wrapper',
@@ -12,16 +16,32 @@ const locationSction = () => {
   window.initMap = initMap;
 
   const tl11 = new TimelineMax();
-  tl11.to('.o-location', 0.4, {
-    opacity: 1,
-    pointerEvents: 'auto',
-    ease: "circ.out",
-  }).to('.o-location__map-container', 0.2, {
-    width: 760,
-    height: 760,
-    display: 'block',
-    ease: "circ.out",
-  }, '-=0.1')
+
+  locationResposive.breakpointUp('xl', () => {
+    tl11.to('.o-location', 0.4, {
+      opacity: 1,
+      pointerEvents: 'auto',
+      ease: "circ.out",
+    }).to('.o-location__map-container', 0.2, {
+      width: 760,
+      height: 760,
+      display: 'block',
+      ease: "circ.out",
+    }, '-=0.1')
+  })
+
+  locationResposive.breakpointDown('lg', () => {
+    tl11.to('.o-location', 0.4, {
+      opacity: 1,
+      pointerEvents: 'auto',
+      ease: "circ.out",
+    }).to('.o-location__map-container', 0.2, {
+      width: 500,
+      height: 500,
+      display: 'block',
+      ease: "circ.out",
+    }, '-=0.1')
+  })
 
   const scene11 = new ScrollMagic.Scene({
     triggerElement: "#o-stage-11",

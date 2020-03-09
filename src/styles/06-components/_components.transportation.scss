@@ -15,6 +15,7 @@
     border-radius: 3px;
     background: $medium-grey;
     overflow: hidden;
+    z-index: -1;
   }
 
   &__title {
@@ -24,6 +25,11 @@
     cursor: pointer;
     margin-bottom: 20px;
     @include basic-transition(0.5s);
+
+    @include media-breakpoint-down(md) {
+      margin-top: 7px;
+      margin-bottom: 7px;
+    }
   }
 
   &__content-wrapper {
@@ -61,7 +67,10 @@
 
   &__wrapper {
     padding-left: 20px;
-    position: relative;
+
+    @include media-breakpoint-up(lg) {
+      position: relative;
+    }
 
     &::before {
       content: '';
@@ -81,9 +90,38 @@
         bottom: 10px;
       }
 
+      @include media-breakpoint-down(md) {
+        border-left: 4px solid #242424;
+
+        &::before {
+          display: none;
+        }
+
+        #{$root}__content-wrapper {
+          opacity: 1;
+        }
+      }
+
       #{$root}__title {
         color: $metro-black;
       }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    max-width: 100%;
+    position: relative;
+
+    &__wrapper {
+      display: flex;
+      margin-left: -1px;
+    }
+
+    &__content-wrapper {
+      position: absolute;
+      top: 0;
+      left: 300px;
+      opacity: 0;
     }
   }
 }
