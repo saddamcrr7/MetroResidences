@@ -25,7 +25,6 @@ const locationSction = () => {
     }).to('.o-location__map-container', 0.2, {
       width: 760,
       height: 760,
-      display: 'block',
       ease: "circ.out",
     }, '-=0.1')
   })
@@ -38,7 +37,6 @@ const locationSction = () => {
     }).to('.o-location__map-container', 0.2, {
       width: 500,
       height: 500,
-      display: 'block',
       ease: "circ.out",
     }, '-=0.1')
   })
@@ -50,24 +48,55 @@ const locationSction = () => {
 
 
   const tl12 = new TimelineMax();
-  tl12.to('.o-location__map-container', 0.7, {
-      width: '100%',
-      height: '100%',
+
+  locationResposive.breakpointUp('xl', () => {
+    tl12.to('.o-location__map-container', 0.7, {
+        width: '100%',
+        height: '100%',
+        borderRadius: 0,
+        ease: "circ.out",
+
+      }).to('.o-location__sidebar', 0.7, {
+        left: 0,
+        ease: "circ.out",
+
+      }, '-=0.7')
+      .to('.o-location__title', 0.7, {
+        left: 50,
+        top: 40,
+        transform: 'transform: translate(0, 0);',
+        ease: "circ.out",
+
+      }, '-=0.7')
+  })
+
+  locationResposive.breakpointDown('lg', () => {
+    tl12.to('.o-location__map-container', 0, {
+      display: 'none',
+      width: `${window.innerWidth}px`,
+      height: 600,
       borderRadius: 0,
+      top: '100%',
+      left: ' 200%',
+      transform: 'translate(0%, 0%)',
+      clipPath: ' polygon(0 10%, 100% 0, 100% 100%, 0% 100%)'
+    }).to('.o-location__sidebar', 0.5, {
+      opacity: 1,
+      pointerEvents: 'auto',
+      transform: 'translate(0, 0)',
       ease: "circ.out",
-
-    }).to('.o-location__sidebar', 0.7, {
-      left: 0,
-      ease: "circ.out",
-
-    }, '-=0.7')
-    .to('.o-location__title', 0.7, {
-      left: 50,
-      top: 40,
+    }).to('.o-location__title', 0.7, {
+      left: 22,
+      top: 28,
       transform: 'transform: translate(0, 0);',
       ease: "circ.out",
-
+    }, '-=0.5').to('.o-location__map-container', 0.5, {
+      display: 'block',
+      top: '100%',
+      left: ' 100%',
+      transform: 'translate(-100%, -100%)'
     }, '-=0.7')
+  })
 
   const scene12 = new ScrollMagic.Scene({
     triggerElement: "#o-stage-12",
