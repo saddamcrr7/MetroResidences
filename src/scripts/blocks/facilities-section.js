@@ -1,8 +1,20 @@
 import controller from '../util/ScrollMagic'
 import facilitiesTab from '../components/facilities-tab'
+import Resposive from '../util/responsive'
 
 const facilitiesSection = () => {
   new facilitiesTab('.o-facilities__nav-item', '.o-facilities__image')
+
+  const facilitiesResposive = new Resposive()
+
+  facilitiesResposive.breakpointUp('xl', () => {
+
+  })
+
+  facilitiesResposive.breakpointDown('lg', () => {
+
+  })
+
 
   const tl7 = new TimelineMax();
   tl7.to('.o-facilities', 1, {
@@ -18,18 +30,38 @@ const facilitiesSection = () => {
 
 
   const tl8 = new TimelineMax();
-  tl8.to('.o-facilities__hero', 1, {
-    width: '100%',
-    height: '100%',
-    ease: "circ.out",
-  }).to('.o-facilities__content', 1, {
-    top: 118,
-    left: 376,
-    ease: "circ.out",
-  }, '-=1').to('.o-facilities__sub', 1, {
-    opacity: 1,
-    ease: "circ.out",
-  }, '-=1')
+
+
+  facilitiesResposive.breakpointUp('xl', () => {
+    tl8.to('.o-facilities__hero', 0.7, {
+      width: '100%',
+      height: '100%',
+      ease: "circ.out",
+    }).to('.o-facilities__content', 0.7, {
+      top: 118,
+      left: 376,
+      ease: "circ.out",
+    }, '-=0.7').to('.o-facilities__sub', 0.7, {
+      opacity: 1,
+      ease: "circ.out",
+    }, '-=0.7')
+  })
+
+  facilitiesResposive.breakpointDown('lg', () => {
+    tl8.to('.o-facilities__hero', 0.7, {
+      width: '100%',
+      height: '100%',
+      padding: '260px 40px 40px 40px',
+      ease: "circ.out",
+    }).to('.o-facilities__content', 0.7, {
+      top: 118,
+      left: 303,
+      ease: "circ.out",
+    }, '-=0.7').to('.o-facilities__sub', 0.7, {
+      opacity: 1,
+      ease: "circ.out",
+    }, '-=0.7')
+  })
 
   const scene8 = new ScrollMagic.Scene({
     triggerElement: "#o-stage-8",
