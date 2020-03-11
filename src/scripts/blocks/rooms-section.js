@@ -24,7 +24,9 @@ const roomsScetion = () => {
     width: `${window.innerWidth}px`,
     height: `${window.innerHeight}px`,
     left: 0,
+    top: 0,
     borderRadius: 0,
+    transform: 'translate(-50%)',
     ease: "power2.out",
   }).to('.c-room--1 .c-room__overlay', 0.7, {
     opacity: 0
@@ -72,6 +74,7 @@ const roomsScetion = () => {
       width: '560px',
       height: '360px',
       left: 400,
+      top: 270,
       ease: "power2.out"
     }).to('.c-room--1 .c-room__overlay', 0.7, {
       opacity: 0.2
