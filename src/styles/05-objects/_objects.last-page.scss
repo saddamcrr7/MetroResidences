@@ -1,10 +1,14 @@
 .o-last-page {
-    position: fixed;
-    top: 50px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 5;
-    background: $metro-white;
-    display: none;
+  position: fixed;
+  top: 50px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  background: $metro-white;
+  display: none;
+
+  @include media-breakpoint-down(md) {
+    overflow-y: auto;
+  }
 }
