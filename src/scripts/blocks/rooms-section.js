@@ -21,8 +21,8 @@ const roomsScetion = () => {
   const tl3 = new TimelineMax();
 
   tl3.to('.c-room--1', 0.7, {
-    width: '100vw',
-    height: '100vh',
+    width: `${window.innerWidth}px`,
+    height: `${window.innerHeight}px`,
     left: 0,
     borderRadius: 0,
     ease: "power2.out",
