@@ -51,8 +51,8 @@ const locationSction = () => {
 
   locationResposive.breakpointUp('xl', () => {
     tl12.to('.o-location__map-container', 0.7, {
-        width: '100%',
-        height: '100%',
+        width: `${window.innerWidth}px`,
+        height: `${window.innerHeight - 50}px`,
         borderRadius: 0,
         ease: "circ.out",
 
