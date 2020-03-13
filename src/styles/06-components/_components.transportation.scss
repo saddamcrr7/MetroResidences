@@ -72,6 +72,10 @@
       position: relative;
     }
 
+    @include media-breakpoint-down(sm) {
+      position: relative;
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -90,7 +94,7 @@
         bottom: 10px;
       }
 
-      @include media-breakpoint-down(md) {
+      @include media-breakpoint-between(sm, md) {
         border-left: 4px solid #242424;
 
         &::before {
@@ -108,7 +112,7 @@
     }
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-between(sm, md) {
     max-width: 100%;
     position: relative;
 

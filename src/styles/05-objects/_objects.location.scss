@@ -5,7 +5,7 @@
   bottom: 0;
   left: 0;
   background: $metro-white;
-  z-index: 7;
+  z-index: 0;
   opacity: 0;
   pointer-events: none;
 
@@ -21,6 +21,13 @@
 
     @include media-breakpoint-down(md) {
       font-size: 60px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 40px;
+      top: 17px !important;
+      left: 29px !important;
+      transform: translate(0) !important;
     }
   }
 
@@ -51,6 +58,10 @@
       width: 400px;
       height: 400px;
     }
+
+    @include media-breakpoint-down(sm) {
+      display: none !important;
+    }
   }
 
   &__map {
@@ -78,6 +89,16 @@
       opacity: 1;
       pointer-events: auto;
       transform: translate(0, 0);
+    }
+
+    @include media-breakpoint-down(sm) {
+      z-index: 1;
+      opacity: 1;
+      height: 100%;
+      width: 100%;
+      pointer-events: auto;
+      transform: translate(0, 0);
+      background: $light-grey;
     }
   }
 
@@ -117,6 +138,10 @@
         clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 85%);
       }
     }
+
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
   }
 
   &__sidebar-container {
@@ -127,6 +152,10 @@
 
     @include media-breakpoint-down(md) {
       max-width: 100%;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-top: 60px;
     }
   }
 }

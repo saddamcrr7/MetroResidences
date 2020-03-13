@@ -45,6 +45,10 @@
 
 #o-stage-12 {
   height: 400px;
+
+  @include media-breakpoint-down(sm) {
+    display: none;
+  }
 }
 
 #o-stage-13 {

@@ -37,6 +37,11 @@
       width: 500px;
       height: 500px;
     }
+
+    @include media-breakpoint-down(sm) {
+      width: 350px;
+      height: 350px;
+    }
   }
 
   &__bg {
@@ -61,6 +66,13 @@
       left: 76%;
       max-width: 528px;
     }
+
+
+    @include media-breakpoint-down(sm) {
+      top: 71%;
+      left: 75%;
+      max-width: 347px;
+    }
   }
 
   &__title {
@@ -71,6 +83,10 @@
 
     @include media-breakpoint-down(md) {
       font-size: 60px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      font-size: 40px;
     }
   }
 

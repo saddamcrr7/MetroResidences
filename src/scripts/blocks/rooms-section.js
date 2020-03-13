@@ -18,15 +18,12 @@ const roomsScetion = () => {
     triggerHook: 0,
   }).setTween(tl2).addTo(controller);
 
-  const tl3 = new TimelineMax();
-
+  let tl3 = new TimelineMax()
   tl3.to('.c-room--1', 0.7, {
     width: `${window.innerWidth}px`,
     height: `${window.innerHeight}px`,
     left: 0,
-    top: 0,
     borderRadius: 0,
-    transform: 'translate(-50%)',
     ease: "power2.out",
   }).to('.c-room--1 .c-room__overlay', 0.7, {
     opacity: 0
@@ -44,30 +41,100 @@ const roomsScetion = () => {
     display: 'block'
   }, '-=0.5')
 
-  const scene3 = new ScrollMagic.Scene({
+  new ScrollMagic.Scene({
     triggerElement: "#o-stage-4",
     triggerHook: 0,
   }).setTween(tl3).addTo(controller);
 
-
-  const tl4 = new TimelineMax();
-
-  roomsResposive.breakpointUp('xl', () => {
-    tl4.to('.c-room--1 .c-room__content', 1, {
-      width: 0
-    }).to('.c-room--1', 0.7, {
-      width: '960px',
-      height: '560px',
-      left: 400,
-      ease: "power2.out"
+  roomsResposive.breakpointDown('lg', () => {
+    tl3 = new TimelineMax()
+    tl3.to('.c-room--1', 0.7, {
+      width: `${window.innerWidth}px`,
+      height: `${window.innerHeight}px`,
+      left: 0,
+      top: 0,
+      borderRadius: 0,
+      transform: 'translate(-50%)',
+      ease: "power2.out",
     }).to('.c-room--1 .c-room__overlay', 0.7, {
-      opacity: 0.2
-    }, '-=0.7').to('.c-room__title--fixed', 0.7, {
-      opacity: 1
-    }, '-=0.7')
+      opacity: 0
+    }, '-=0.7').to('.c-room--1 .c-room__content', 0.7, {
+      top: 70,
+      left: 50,
+      transform: `translate(0, 0)`,
+      ease: "power2.out"
+    }, '-=0.7').to('.c-room--1 .c-room__sub', 0.7, {
+      opacity: 1,
+      ease: "power2.out"
+    }, '-=0.7').to('.o-rooms', 0.5, {
+      background: '#FEFEFF'
+    }).to('.c-room', 0, {
+      display: 'block'
+    }, '-=0.5')
+
+    new ScrollMagic.Scene({
+      triggerElement: "#o-stage-4",
+      triggerHook: 0,
+    }).setTween(tl3).addTo(controller);
   })
 
+  roomsResposive.breakpointDown('sm', () => {
+    tl3 = new TimelineMax()
+    tl3.to('.c-room--1', 0.7, {
+      width: `${window.innerWidth}px`,
+      height: `${window.innerHeight}px`,
+      left: 0,
+      top: 0,
+      borderRadius: 0,
+      ease: "power2.out",
+    }).to('.c-room--1 .c-room__overlay', 0.7, {
+      opacity: 0
+    }, '-=0.7').to('.c-room--1 .c-room__content', 0.7, {
+      top: 20,
+      left: 20,
+      transform: `translate(0, 0)`,
+      ease: "power2.out"
+    }, '-=0.7').to('.c-room--1 .c-room__sub', 0.7, {
+      opacity: 1,
+      ease: "power2.out"
+    }, '-=0.7').to('.o-rooms', 0.5, {
+      background: '#FEFEFF'
+    }).to('.c-room', 0, {
+      display: 'block'
+    }, '-=0.5')
+
+    new ScrollMagic.Scene({
+      triggerElement: "#o-stage-4",
+      triggerHook: 0,
+    }).setTween(tl3).addTo(controller);
+  })
+
+
+
+  let tl4 = new TimelineMax();
+
+  tl4.to('.c-room--1 .c-room__content', 1, {
+    width: 0
+  }).to('.c-room--1', 0.7, {
+    width: '960px',
+    height: '560px',
+    left: 400,
+    ease: "power2.out"
+  }).to('.c-room--1 .c-room__overlay', 0.7, {
+    opacity: 0.2
+  }, '-=0.7').to('.c-room__title--fixed', 0.7, {
+    opacity: 1
+  }, '-=0.7')
+
+  new ScrollMagic.Scene({
+    triggerElement: "#o-stage-5",
+    triggerHook: 0,
+  }).setTween(tl4).addTo(controller);
+
+
   roomsResposive.breakpointDown('lg', () => {
+    tl4 = new TimelineMax();
+
     tl4.to('.c-room--1 .c-room__content', 1, {
       width: 0
     }).to('.c-room--1', 0.7, {
@@ -81,8 +148,36 @@ const roomsScetion = () => {
     }, '-=0.7').to('.c-room__title--fixed', 0.7, {
       opacity: 1
     }, '-=0.7')
+
+    new ScrollMagic.Scene({
+      triggerElement: "#o-stage-5",
+      triggerHook: 0,
+    }).setTween(tl4).addTo(controller);
   })
 
+
+  roomsResposive.breakpointDown('sm', () => {
+    tl4 = new TimelineMax();
+
+    tl4.to('.c-room--1 .c-room__content', 1, {
+      width: 0
+    }).to('.c-room--1', 0.7, {
+      width: '340px',
+      height: '230px',
+      left: 400,
+      top: 270,
+      ease: "power2.out"
+    }).to('.c-room--1 .c-room__overlay', 0.7, {
+      opacity: 0.2
+    }, '-=0.7').to('.c-room__title--fixed', 0.7, {
+      opacity: 1
+    }, '-=0.7')
+
+    new ScrollMagic.Scene({
+      triggerElement: "#o-stage-5",
+      triggerHook: 0,
+    }).setTween(tl4).addTo(controller);
+  })
 
 
 
@@ -93,15 +188,6 @@ const roomsScetion = () => {
 
 
   TweenLite.defaultEase = Linear.easeNone;
-
-  roomsResposive.breakpointUp('xl', () => {
-
-  })
-
-  roomsResposive.breakpointDown('lg', () => {
-
-  })
-
 
 
   const tl5 = new TimelineMax();
@@ -168,7 +254,8 @@ const roomsScetion = () => {
 
         const nipa = room.querySelector('.c-room__close')
         const roomTitle = room.querySelector('.c-room__title')
-        const priceWrap = room.querySelector('.c-room__price-wrap')
+        const priceWrap = room.querySelector(
+          '.c-room__price-wrap')
         const sidebar = room.querySelector('.c-room__sidebar')
 
         const slideImages = new roomSlider(room)

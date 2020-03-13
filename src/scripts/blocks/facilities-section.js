@@ -24,28 +24,32 @@ const facilitiesSection = () => {
   }).setTween(tl7).addTo(controller);
 
 
-  const tl8 = new TimelineMax();
+  let tl8 = new TimelineMax();
 
 
-  facilitiesResposive.breakpointUp('xl', () => {
-    tl8.to('.o-facilities__hero', 0.7, {
-      width: '100%',
-      height: '100%',
-      ease: "circ.out",
-    }).to('.o-facilities__content', 0.7, {
-      top: 118,
-      left: 376,
-      ease: "circ.out",
-    }, '-=0.7').to('.o-facilities__sub', 0.7, {
-      opacity: 1,
-      ease: "circ.out",
-    }, '-=0.7')
-  })
+  tl8.to('.o-facilities__hero', 0.7, {
+    width: `${window.innerWidth}px`,
+    height: `${window.innerHeight - 50}px`,
+    ease: "circ.out",
+  }).to('.o-facilities__content', 0.7, {
+    top: 118,
+    left: 376,
+    ease: "circ.out",
+  }, '-=0.7').to('.o-facilities__sub', 0.7, {
+    opacity: 1,
+    ease: "circ.out",
+  }, '-=0.7')
+
+  new ScrollMagic.Scene({
+    triggerElement: "#o-stage-8",
+    triggerHook: 0,
+  }).setTween(tl8).addTo(controller);
 
   facilitiesResposive.breakpointDown('lg', () => {
+    tl8 = new TimelineMax();
     tl8.to('.o-facilities__hero', 0.7, {
-      width: '100%',
-      height: '100%',
+      width: `${window.innerWidth}px`,
+    height: `${window.innerHeight - 50}px`,
       padding: '260px 40px 40px 40px',
       ease: "circ.out",
       transform: 'translate(-50%,-50%)'
@@ -57,12 +61,35 @@ const facilitiesSection = () => {
       opacity: 1,
       ease: "circ.out",
     }, '-=0.7')
+
+    new ScrollMagic.Scene({
+      triggerElement: "#o-stage-8",
+      triggerHook: 0,
+    }).setTween(tl8).addTo(controller);
   })
 
-  const scene8 = new ScrollMagic.Scene({
-    triggerElement: "#o-stage-8",
-    triggerHook: 0,
-  }).setTween(tl8).addTo(controller);
+  facilitiesResposive.breakpointDown('sm', () => {
+    tl8 = new TimelineMax();
+    tl8.to('.o-facilities__hero', 0.7, {
+      width: `${window.innerWidth}px`,
+      height: `${window.innerHeight - 50}px`,
+      padding: '260px 20px 20px 20px',
+      ease: "circ.out",
+    }).to('.o-facilities__content', 0.7, {
+      top: 118,
+      left: 196,
+      ease: "circ.out",
+    }, '-=0.7').to('.o-facilities__sub', 0.7, {
+      opacity: 1,
+      ease: "circ.out",
+    }, '-=0.7')
+
+    new ScrollMagic.Scene({
+      triggerElement: "#o-stage-8",
+      triggerHook: 0,
+    }).setTween(tl8).addTo(controller);
+  })
+
 
 
 
@@ -90,7 +117,7 @@ const facilitiesSection = () => {
       pointerEvents: 'auto',
       transform: 'translateY(0)'
     }).to('.o-facilities__hero', 0.7, {
-        top: '-50%'
+      top: '-50%'
     }, '-=0.7')
   })
 

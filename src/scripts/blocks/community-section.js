@@ -29,40 +29,45 @@ const communitySction = () => {
     triggerHook: 0,
   }).setTween(tl13).addTo(controller);
 
-  const tl14 = new TimelineMax();
+  let tl14 = new TimelineMax();
 
-  communityResposive.breakpointUp('xl', () => {
-    tl14.to('.o-community__content', 0.5, {
-      left: 80,
-      top: 60,
-      transform: 'translate(0, 0)',
-      ease: "circ.out",
-    }).to('.o-community__sub', 0.5, {
-      opacity: 1,
-      ease: "circ.out",
-    }, '-=0.5').to('.o-community__image-container-backdrop', 1, {
-      opacity: 1,
-      ease: "circ.out",
-    }, '-=0.5').to('.o-community__image--intro', 0.5, {
-      borderRadius: 0,
-      width: 900,
-      height: 600,
-      transform: 'translate(0, 0)',
-      top: 150,
-      left: 900,
-      ease: "circ.out",
-    }, '-=1').to('.o-community__image--left-1', 0.5, {
-      opacity: 1,
-      scale: 1,
-      ease: "circ.out",
-    }, '-=1').to('.o-community__image--middle-1', 0.5, {
-      opacity: 1,
-      scale: 1,
-      ease: "circ.out",
-    }, '-=1')
-  })
+  tl14.to('.o-community__content', 0.5, {
+    left: 80,
+    top: 60,
+    transform: 'translate(0, 0)',
+    ease: "circ.out",
+  }).to('.o-community__sub', 0.5, {
+    opacity: 1,
+    ease: "circ.out",
+  }, '-=0.5').to('.o-community__image-container-backdrop', 1, {
+    opacity: 1,
+    ease: "circ.out",
+  }, '-=0.5').to('.o-community__image--intro', 0.5, {
+    borderRadius: 0,
+    width: 900,
+    height: 600,
+    transform: 'translate(0, 0)',
+    top: 150,
+    left: 900,
+    ease: "circ.out",
+  }, '-=1').to('.o-community__image--left-1', 0.5, {
+    opacity: 1,
+    scale: 1,
+    ease: "circ.out",
+  }, '-=1').to('.o-community__image--middle-1', 0.5, {
+    opacity: 1,
+    scale: 1,
+    ease: "circ.out",
+  }, '-=1')
+
+  new ScrollMagic.Scene({
+    triggerElement: "#o-stage-14",
+    triggerHook: 0,
+  }).setTween(tl14).addTo(controller)
 
   communityResposive.breakpointDown('lg', () => {
+    tl14 = new TimelineMax()
+
     tl14.to('.o-community__content', 0.5, {
       left: 30,
       top: 40,
@@ -82,17 +87,49 @@ const communitySction = () => {
     }, '-=1').to('.o-community__image--clone', 0.1, {
       opacity: 1
     }, '-=1')
+
+    new ScrollMagic.Scene({
+      triggerElement: "#o-stage-14",
+      triggerHook: 0,
+    }).setTween(tl14).addTo(controller)
   })
 
-  const scene14 = new ScrollMagic.Scene({
-    triggerElement: "#o-stage-14",
-    triggerHook: 0,
-  }).setTween(tl14).addTo(controller);
+  communityResposive.breakpointDown('sm', () => {
+    tl14 = new TimelineMax()
+
+    tl14.to('.o-community__content', 0.5, {
+      left: 0,
+      top: 0,
+      transform: 'translate(0, 0)',
+      ease: "circ.out",
+    }).to('.o-community__sub', 0.5, {
+      opacity: 1,
+      ease: "circ.out",
+    }, '-=0.5').to('.o-community__image-container-backdrop', 1, {
+      opacity: 1,
+      ease: "circ.out",
+    }, '-=0.5').to('.o-community__image--intro', 0.5, {
+      opacity: 0
+    }, '-=1').to('.o-community__image--middle-1', 0.1, {
+      opacity: 1,
+      ease: "circ.out",
+    }, '-=1').to('.o-community__image--clone', 0.1, {
+      opacity: 1
+    }, '-=1').to('.o-community__content', 0, {
+      background: '#242424'
+    })
+    
+    new ScrollMagic.Scene({
+      triggerElement: "#o-stage-14",
+      triggerHook: 0,
+    }).setTween(tl14).addTo(controller)
+  })
+
 
 
   const tl15 = new TimelineMax()
 
-  communityResposive.breakpointUp('xl', ()=> {
+  communityResposive.breakpointUp('xl', () => {
     tl15.to('.o-community__image--left-1', 1, {
       filter: 'blur(2px)',
       transform: 'translateY(-800px)',
@@ -125,7 +162,7 @@ const communitySction = () => {
     })
   })
 
-  communityResposive.breakpointDown('lg', ()=> {
+  communityResposive.breakpointDown('lg', () => {
     tl15.to('.o-community__image--middle-1', 1, {
       filter: 'blur(2px)',
       transform: 'translateY(-1500px)',
@@ -161,7 +198,7 @@ const communitySction = () => {
 
 
 
-  communityResposive.breakpointUp('xl', ()=>{
+  communityResposive.breakpointUp('xl', () => {
     tl16.to('.o-community__image--left-2', 1, {
       filter: 'blur(3px)',
       transform: 'translateY(-800px)',
@@ -192,7 +229,7 @@ const communitySction = () => {
     }, '-=1.5')
   })
 
-  communityResposive.breakpointDown('lg', ()=>{
+  communityResposive.breakpointDown('lg', () => {
     tl16.to('.o-community__image--middle-3', 1, {
       filter: 'blur(5px)',
       transform: 'translateY(-1500px)',

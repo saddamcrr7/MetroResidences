@@ -35,6 +35,12 @@
         font-weight: normal;
         letter-spacing: 0;
         margin-top: 20px;
+
+        span {
+            @include media-breakpoint-up(md) {
+                display: none;
+            }
+        }
     }
 
 }

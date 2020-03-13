@@ -21,6 +21,7 @@ const locationSction = () => {
     tl11.to('.o-location', 0.4, {
       opacity: 1,
       pointerEvents: 'auto',
+      zIndex: 7,
       ease: "circ.out",
     }).to('.o-location__map-container', 0.2, {
       width: 760,
@@ -33,6 +34,7 @@ const locationSction = () => {
     tl11.to('.o-location', 0.4, {
       opacity: 1,
       pointerEvents: 'auto',
+      zIndex: 7,
       ease: "circ.out",
     }).to('.o-location__map-container', 0.2, {
       width: 500,
@@ -47,30 +49,35 @@ const locationSction = () => {
   }).setTween(tl11).addTo(controller);
 
 
-  const tl12 = new TimelineMax();
+  let tl12 = new TimelineMax();
 
-  locationResposive.breakpointUp('xl', () => {
-    tl12.to('.o-location__map-container', 0.7, {
-        width: `${window.innerWidth}px`,
-        height: `${window.innerHeight - 50}px`,
-        borderRadius: 0,
-        ease: "circ.out",
+  tl12.to('.o-location__map-container', 0.7, {
+      width: `${window.innerWidth}px`,
+      height: `${window.innerHeight - 50}px`,
+      borderRadius: 0,
+      ease: "circ.out",
 
-      }).to('.o-location__sidebar', 0.7, {
-        left: 0,
-        ease: "circ.out",
+    }).to('.o-location__sidebar', 0.7, {
+      left: 0,
+      ease: "circ.out",
 
-      }, '-=0.7')
-      .to('.o-location__title', 0.7, {
-        left: 50,
-        top: 40,
-        transform: 'transform: translate(0, 0);',
-        ease: "circ.out",
+    }, '-=0.7')
+    .to('.o-location__title', 0.7, {
+      left: 50,
+      top: 40,
+      transform: 'transform: translate(0, 0);',
+      ease: "circ.out",
 
-      }, '-=0.7')
-  })
+    }, '-=0.7')
+
+  new ScrollMagic.Scene({
+    triggerElement: "#o-stage-12",
+    triggerHook: 0,
+  }).setTween(tl12).addTo(controller)
 
   locationResposive.breakpointDown('lg', () => {
+    tl12 = new TimelineMax()
+
     tl12.to('.o-location__map-container', 0, {
       display: 'none',
       width: `${window.innerWidth}px`,
@@ -96,12 +103,22 @@ const locationSction = () => {
       left: ' 100%',
       transform: 'translate(-100%, -100%)'
     }, '-=0.7')
+
+    new ScrollMagic.Scene({
+      triggerElement: "#o-stage-12",
+      triggerHook: 0,
+    }).setTween(tl12).addTo(controller)
   })
 
-  const scene12 = new ScrollMagic.Scene({
-    triggerElement: "#o-stage-12",
-    triggerHook: 0,
-  }).setTween(tl12).addTo(controller);
+  locationResposive.breakpointDown('sm', () => {
+    tl12 = new TimelineMax()
+    
+    new ScrollMagic.Scene({
+      triggerElement: "#o-stage-12",
+      triggerHook: 0,
+    }).setTween(tl12).addTo(controller)
+  })
+
 }
 
 export default locationSction

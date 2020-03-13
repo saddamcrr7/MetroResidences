@@ -10,5 +10,11 @@
 
   @include media-breakpoint-down(md) {
     overflow-y: auto;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
