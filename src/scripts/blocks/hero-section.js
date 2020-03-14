@@ -101,7 +101,7 @@ const heroSection = () => {
       })
       .to(".o-hero__banner", 0.7, {
         top: '-200px',
-        left: '-550px',
+        left: '-327px',
         ease: "circ.out",
       }, '-=0.7').to('.o-hero__overlay', 0.7, {
         opacity: 0.5,
@@ -162,7 +162,7 @@ const heroSection = () => {
   })
 
 
-  heroResposive.breakpointDown('md', () => {
+  heroResposive.breakpointDown('sm', () => {
     tl1 = new TimelineMax()
 
     tl1.to(".o-hero__title", 0.7, {
@@ -174,9 +174,10 @@ const heroSection = () => {
         ease: "circ.out",
       }, '-=0.7')
       .to(".o-hero__banner", 0.7, {
-        top: '-400px',
-        left: '-550px',
-        bottom: 'auto',
+        top: '-505px',
+        left: '-400px',
+        bottom: '0',
+        transform: 'scale(1)',
         ease: "circ.out",
       }, '-=0.7')
 

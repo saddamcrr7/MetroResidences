@@ -48,6 +48,7 @@
       left: -947px;
       top: -659px;
       transform: scale(1.35);
+      bottom: 0 !important;
     }
   }
 
@@ -112,6 +113,7 @@
 
     @include media-breakpoint-down(sm) {
       max-width: 316px + ($grid-gutter-width / 2);
+      line-height: 24px;
     }
 
   }
