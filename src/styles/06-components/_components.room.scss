@@ -15,6 +15,7 @@
     transform: translate(-50%, 0);
     width: 560px;
     height: 360px;
+    background: transparent;
   }
 
   @include media-breakpoint-down(sm) {
@@ -119,6 +120,19 @@
           pointer-events: auto;
           cursor: auto;
         }
+
+        @include media-breakpoint-down(md) {
+          width: 560px;
+          height: 360px;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        @include media-breakpoint-down(sm) {
+          width: 340px;
+          height: 230px;
+        }
       }
 
       &__title {
@@ -172,8 +186,7 @@
         cursor: auto;
 
         @include media-breakpoint-down(md) {
-          width: 100%;
-          height: 0;
+          height: 0px;
           background: $metro-white;
         }
       }
@@ -185,6 +198,9 @@
         @include media-breakpoint-down(md) {
           padding-top: 130px;
           display: flex;
+          opacity: 0;
+          height: 100%;
+          margin-top: -20px;
         }
       }
 
@@ -263,6 +279,12 @@
         font-weight: $font-weight-bold;
         letter-spacing: 0;
         font-size: 15px;
+
+        @include media-breakpoint-down(md) {
+          bottom: 40px;
+          width: 180px;
+          left: 188px;
+        }
       }
 
       &__dots {
@@ -314,12 +336,13 @@
     @include media-breakpoint-down(md) {
       #{$root} {
 
-        &__bg,
+        &__title,
+        &__price-wrap {
+          color: $metro-black;
+        }
+
         &__overlay {
-          top: auto;
-          bottom: 0;
-          height: 50vh;
-          box-shadow: none;
+          display: none;
         }
       }
     }

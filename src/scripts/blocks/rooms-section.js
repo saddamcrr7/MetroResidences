@@ -301,24 +301,36 @@ const roomsScetion = () => {
         roomsResposive.breakpointDown('lg', () => {
           const setRoomHeight = window.innerHeight - 50
           const setRoomWidth = window.innerWidth
-          tl6.to(room, 0, {
-            zIndex: 5
-          }).to(room, 0, {
+
+          tl6.to(room, 0.5, {
+            zIndex: 5,
             top: `${yTop()}px`,
             bottom: `${yBottom()}px`,
             width: `${setRoomWidth}px`,
             height: `${setRoomHeight}px`,
             ease: "circ.out"
-          }).to(sidebar, 0, {
-            height: '50%'
-          }).to(roomTitle, 0.7, {
-            top: 86,
-            left: 38,
-            color: '#242424',
-            fontSize: '60px',
-            transform: 'translate(0,-50%)',
+          }).to('.is-open .c-room__bg', 0, {
+            top: `85%`,
+            height: `{${setRoomHeight / 2.5}px}`,
+            width: `${setRoomWidth}px`,
             ease: "circ.out"
-          }, '')
+          },'-=0.5').to(sidebar, 0, {
+              height: `67vh`,
+              width: '100vw'
+          }).to(roomTitle, 0.5, {
+            top: '9%',
+            left: '20%',
+            ease: "circ.out"
+          }, '-=0.4').to('.is-open .c-room__price-wrap', 0.4, {
+            bottom: '30vh'
+           }, '-=0.6').to('.is-open .c-room__sidebar-container', 0.4, {
+            margin: 0,
+            opacity: 1
+          }, '-=0.1').to('.is-open .c-room__btn', 0.4, {
+           bottom: '30px'
+          }, '-=0.4')
+
+
         })
 
 
