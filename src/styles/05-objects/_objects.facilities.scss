@@ -136,10 +136,36 @@
     }
 
     @include media-breakpoint-down(md) {
-      padding-top: 45px;
-      padding-bottom: 45px;
+      padding-top: 35px;
+      padding-bottom: 35px;
+      padding-left: 50px;
       clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);
 
+
+      &::before,
+      &::after {
+        content: '';
+        position: fixed;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background: $metro-purple;
+      }
+
+      &::before {
+        top: 0;
+        height: 35px;
+      }
+
+      &::after {
+        top: 270px;
+        height: 55px;
+      }
+
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding-left: 20px;
     }
   }
 

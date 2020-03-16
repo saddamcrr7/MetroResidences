@@ -302,33 +302,45 @@ const roomsScetion = () => {
           const setRoomHeight = window.innerHeight - 50
           const setRoomWidth = window.innerWidth
 
-          tl6.to(room, 0.5, {
-            zIndex: 5,
+          
+          tl6.to('.is-open .c-room__overlay', 0, {
+            opacity: 0
+          }).to(room, 0, {
+            zIndex: 5
+          }).to(room, 0.5, {
             top: `${yTop()}px`,
             bottom: `${yBottom()}px`,
             width: `${setRoomWidth}px`,
             height: `${setRoomHeight}px`,
             ease: "circ.out"
           }).to('.is-open .c-room__bg', 0, {
-            top: `85%`,
-            height: `{${setRoomHeight / 2.5}px}`,
+            top: `80%`,
+            height: `${setRoomHeight / 2.5}px`,
             width: `${setRoomWidth}px`,
             ease: "circ.out"
-          },'-=0.5').to(sidebar, 0, {
-              height: `67vh`,
-              width: '100vw'
-          }).to(roomTitle, 0.5, {
-            top: '9%',
-            left: '20%',
+          }, '-=0.5').to(roomTitle, 0.5, {
+            top: '40px',
+            left: '20px',
+            width: 0,
             ease: "circ.out"
-          }, '-=0.4').to('.is-open .c-room__price-wrap', 0.4, {
-            bottom: '30vh'
-           }, '-=0.6').to('.is-open .c-room__sidebar-container', 0.4, {
-            margin: 0,
-            opacity: 1
-          }, '-=0.1').to('.is-open .c-room__btn', 0.4, {
-           bottom: '30px'
-          }, '-=0.4')
+          }, '-=0.4').to('.is-open .c-room__price-wrap',
+            0.4, {
+              bottom: '41vh',
+              ease: "circ.out"
+            }, '-=0.6').to(
+            '.is-open .c-room__sidebar-container', 0.4, {
+              margin: 0,
+              opacity: 1,
+              ease: "circ.out"
+            }, '-=0.1').to('.is-open .c-room__btn', 0.4, {
+            bottom: '30px',
+            ease: "circ.out"
+          }, '-=0.4').to('.is-open .c-room__sidebar', 0.2, {
+            display: 'block'
+          }, '-=0.4').to('.c-room__dots', 0.4, {
+            opacity: 1,
+            pointerEvents: 'auto'
+          }, '-=0.2')
 
 
         })

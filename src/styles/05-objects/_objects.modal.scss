@@ -16,6 +16,8 @@
 
   @include media-breakpoint-down(md) {
     top: 0;
+    overflow: auto;
+    padding: 35px;
   }
 
   &__backdrop {
@@ -37,8 +39,13 @@
     border-radius: 30px;
     overflow: hidden;
     padding: 60px;
+
     @include media-breakpoint-down(md) {
       max-width: 700px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: 20px;
     }
   }
 
@@ -46,6 +53,13 @@
     display: flex;
     width: 100%;
     justify-content: flex-end;
+
+    @include media-breakpoint-down(sm) {
+      position: absolute;
+      right: 10px;
+      top: 35px;
+      z-index: 90;
+    }
   }
 
   &__close {
@@ -76,6 +90,18 @@
 
     &__title {
       font-size: 40px;
+    }
+
+    &__illustrations {
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+
+    &__form-submit {
+      @include media-breakpoint-down(sm) {
+        width: 100%;
+      }
     }
   }
 
