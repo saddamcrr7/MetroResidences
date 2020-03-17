@@ -21,6 +21,14 @@
 
 #o-stage-6 {
   height: 3500px;
+
+  @include media-breakpoint-down(md) {
+    height: 2050px;
+  }
+
+  @include media-breakpoint-down(md) {
+    height: 1730px;
+  }
 }
 
 #o-stage-7 {

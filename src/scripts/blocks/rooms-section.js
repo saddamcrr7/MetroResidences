@@ -200,25 +200,33 @@ const roomsScetion = () => {
     }, "label2").to(".o-rooms__wrapper", 1, {
       transform: 'translateX(-30%)'
     }, "label3")
+
+    new ScrollMagic.Scene({
+      triggerElement: "#o-stage-6",
+      triggerHook: "onLeave",
+      duration: "400%"
+    }).setPin(".o-rooms__container").setTween(tl5).addTo(controller);
   })
 
   roomsResposive.breakpointDown('lg', () => {
     tl5.to('.o-rooms__wrapper', 1, {
       transform: 'translateY(-10%)',
     }, "label1").to(".o-rooms__wrapper", 1, {
-      transform: 'translateY(-20%)'
+      transform: 'translateY(-25%)'
     }, "label2").to(".o-rooms__wrapper", 1, {
-      transform: 'translateY(-30%)'
+      transform: 'translateY(-35%)'
     }, "label3")
+
+    new ScrollMagic.Scene({
+      triggerElement: "#o-stage-6",
+      triggerHook: "onLeave",
+      duration: "200%"
+    }).setPin(".o-rooms__container").setTween(tl5).addTo(controller);
   })
 
 
 
-  const scene5 = new ScrollMagic.Scene({
-    triggerElement: "#o-stage-6",
-    triggerHook: "onLeave",
-    duration: "400%"
-  }).setPin(".o-rooms__container").setTween(tl5).addTo(controller);
+
 
 
 
@@ -302,7 +310,7 @@ const roomsScetion = () => {
           const setRoomHeight = window.innerHeight - 50
           const setRoomWidth = window.innerWidth
 
-          
+
           tl6.to('.is-open .c-room__overlay', 0, {
             opacity: 0
           }).to(room, 0, {
