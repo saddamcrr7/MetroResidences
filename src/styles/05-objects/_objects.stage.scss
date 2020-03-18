@@ -26,7 +26,7 @@
     height: 2050px;
   }
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(sm) {
     height: 1730px;
   }
 }

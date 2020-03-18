@@ -131,11 +131,9 @@ const communitySction = () => {
 
   communityResposive.breakpointUp('xl', () => {
     tl15.to('.o-community__image--left-1', 1, {
-      filter: 'blur(2px)',
       transform: 'translateY(-800px)',
       ease: "circ.out",
     }).to('.o-community__image--middle-1', 1, {
-      filter: 'blur(2px)',
       transform: 'translateY(-1500px)',
       ease: "circ.out",
     }, '-=1').to('.o-community__image--right-1', 1, {
@@ -143,19 +141,15 @@ const communitySction = () => {
       ease: "circ.out",
     }, '-=1').to('.o-community__image--left-2', 1, {
       transform: 'translateY(0)',
-      filter: 'blur(0px)',
       ease: "circ.out",
     }, '-=1').to('.o-community__image--middle-2', 1.5, {
-      filter: 'blur(2px)',
       transform: 'translateY(-1500px)',
       ease: "circ.out",
     }, '-=1').to('.o-community__image--middle-3', 1, {
       transform: 'translateY(0px)',
-      filter: 'blur(0px)',
       ease: "circ.out",
     }, '-=1.5').to('.o-community__image--right-2', 1, {
       transform: 'translateY(0)',
-      filter: 'blur(0px)',
       ease: "circ.out",
     }, '-=1.5').to('.o-last-page', 0, {
       display: 'block'
@@ -164,23 +158,19 @@ const communitySction = () => {
 
   communityResposive.breakpointDown('lg', () => {
     tl15.to('.o-community__image--middle-1', 1, {
-      filter: 'blur(2px)',
       transform: 'translateY(-1500px)',
       ease: "circ.out",
     }, '-=1').to('.o-community__image--right-1', 1, {
       transform: 'translateY(-800px)',
       ease: "circ.out",
     }, '-=1').to('.o-community__image--middle-2', 1.5, {
-      filter: 'blur(2px)',
       transform: 'translateY(-1500px)',
       ease: "circ.out",
     }, '-=1').to('.o-community__image--middle-3', 1, {
       transform: 'translateY(0px)',
-      filter: 'blur(0px)',
       ease: "circ.out",
     }, '-=1.5').to('.o-community__image--right-2', 1, {
       transform: 'translateY(0)',
-      filter: 'blur(0px)',
       ease: "circ.out",
     }, '-=1.5').to('.o-last-page', 0, {
       display: 'block'
@@ -200,11 +190,9 @@ const communitySction = () => {
 
   communityResposive.breakpointUp('xl', () => {
     tl16.to('.o-community__image--left-2', 1, {
-      filter: 'blur(3px)',
       transform: 'translateY(-800px)',
       ease: "circ.out",
     }).to('.o-community__image--middle-3', 1, {
-      filter: 'blur(5px)',
       transform: 'translateY(-1500px)',
       ease: "circ.out",
     }, '-=1').to('.o-community__image--right-2', 1, {
@@ -212,42 +200,34 @@ const communitySction = () => {
       ease: "circ.out",
     }, '-=1').to('.o-community__image--left-3', 1, {
       transform: 'translateY(0)',
-      filter: 'blur(0px)',
       ease: "circ.out",
     }, '-=1').to('.o-community__image--middle-4', 1.5, {
-      filter: 'blur(2px)',
       transform: 'translateY(-1500px)',
       ease: "circ.out",
     }, '-=1').to('.o-community__image--middle-5', 1, {
       transform: 'translateY(0px)',
-      filter: 'blur(0px)',
       ease: "circ.out",
     }, '-=1.5').to('.o-community__image--right-3', 1, {
       transform: 'translateY(0)',
-      filter: 'blur(0px)',
       ease: "circ.out",
     }, '-=1.5')
   })
 
   communityResposive.breakpointDown('lg', () => {
     tl16.to('.o-community__image--middle-3', 1, {
-      filter: 'blur(5px)',
       transform: 'translateY(-1500px)',
       ease: "circ.out",
     }, '-=1').to('.o-community__image--right-2', 1, {
       transform: 'translateY(-800px)',
       ease: "circ.out",
     }, '-=1').to('.o-community__image--middle-4', 1.5, {
-      filter: 'blur(2px)',
       transform: 'translateY(-1500px)',
       ease: "circ.out",
     }, '-=1').to('.o-community__image--middle-5', 1, {
       transform: 'translateY(0px)',
-      filter: 'blur(0px)',
       ease: "circ.out",
     }, '-=1.5').to('.o-community__image--right-3', 1, {
       transform: 'translateY(0)',
-      filter: 'blur(0px)',
       ease: "circ.out",
     }, '-=1.5')
   })

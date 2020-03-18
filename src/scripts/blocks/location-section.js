@@ -56,18 +56,15 @@ const locationSction = () => {
       height: `${window.innerHeight - 50}px`,
       borderRadius: 0,
       ease: "circ.out",
-
     }).to('.o-location__sidebar', 0.7, {
       left: 0,
       ease: "circ.out",
-
     }, '-=0.7')
     .to('.o-location__title', 0.7, {
       left: 50,
       top: 40,
-      transform: 'transform: translate(0, 0);',
+      transform: 'translate(0, 0)',
       ease: "circ.out",
-
     }, '-=0.7')
 
   new ScrollMagic.Scene({
@@ -95,7 +92,7 @@ const locationSction = () => {
     }).to('.o-location__title', 0.7, {
       left: 22,
       top: 28,
-      transform: 'transform: translate(0, 0);',
+      transform: 'translate(0)',
       ease: "circ.out",
     }, '-=0.5').to('.o-location__map-container', 0.5, {
       display: 'block',

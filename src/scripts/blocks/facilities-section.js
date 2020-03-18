@@ -91,8 +91,6 @@ const facilitiesSection = () => {
   })
 
 
-
-
   const tl9 = new TimelineMax();
 
   facilitiesResposive.breakpointUp('xl', () => {
