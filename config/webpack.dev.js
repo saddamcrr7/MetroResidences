@@ -8,7 +8,8 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, "../build"),
-    filename: "[name].bundle.js"
+    filename: "[name].bundle.js",
+    hashFunction: "sha256"
   },
   mode: "development",
   devServer: {
@@ -28,7 +29,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.s[ac]ss$/i,
         use: [
           "style-loader", // creates style nodes from JS strings
           "css-loader", // translates CSS into CommonJS
@@ -47,6 +48,18 @@ module.exports = {
               esModule: false,
             }
           },
+        ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
         ]
       },
       {

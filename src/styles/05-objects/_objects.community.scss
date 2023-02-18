@@ -126,6 +126,7 @@
     bottom: 0;
     overflow: hidden;
     z-index: 2;
+    will-change: transform;
     opacity: 0;
   }
 
@@ -137,6 +138,7 @@
     bottom: 0;
     z-index: 1;
     background: $metro-black;
+    will-change: transform;
     opacity: 0;
   }
 
@@ -145,6 +147,7 @@
     position: absolute;
     z-index: 2;
     transform: translate(0, 0);
+    will-change: transform;
 
     img {
       width: 100%;

@@ -9,6 +9,7 @@
   display: none;
   cursor: pointer;
   background: $metro-white;
+  will-change: transform;
 
   @include media-breakpoint-down(md) {
     left: 50% !important;
@@ -55,6 +56,7 @@
   &__bg-image {
     width: 100%;
     height: 100%;
+    will-change: transform;
     @include object-fit(cover);
   }
 
@@ -83,6 +85,7 @@
     font-size: 100px;
     letter-spacing: -0.14px;
     font-weight: $font-weight-bold;
+    will-change: transform;
 
     @include media-breakpoint-down(md) {
       font-size: 60px !important;
@@ -199,6 +202,7 @@
         background: rgba(#2A2733, 0.5);
         z-index: 3;
         cursor: auto;
+        will-change: transform;
 
         @include media-breakpoint-down(md) {
           height: 57vh;

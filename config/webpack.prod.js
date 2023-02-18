@@ -29,7 +29,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.s[ac]ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader", // translates CSS into CommonJS
@@ -48,6 +48,18 @@ module.exports = {
               esModule: false
             }
           },
+        ]
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
         ]
       },
       {
@@ -83,9 +95,9 @@ module.exports = {
     // In this case, this plugin will remove 'dist' and 'build' folder before re-build again
     new CleanWebpackPlugin(),
     // PurgecssPlugin will remove unused CSS
-    new PurgecssPlugin({
-      paths: glob.sync(path.resolve(__dirname, '../src/**/*'), { nodir: true })
-    }),
+    // new PurgecssPlugin({
+    //   paths: glob.sync(path.resolve(__dirname, '../src/**/*'), { nodir: true })
+    // }),
     // This plugin will extract all css to one file
     new MiniCssExtractPlugin({
       filename: "[name].[chunkhash:8].bundle.css",
@@ -99,9 +111,9 @@ module.exports = {
     // ComppresionPlugin will Prepare compressed versions of assets to serve them with Content-Encoding.
     // In this case we use gzip
     // But, you can also use the newest algorithm like brotli, and it's supperior than gzip
-    new CompressionPlugin({
-      algorithm: "gzip"
-    }),
-    new BrotliPlugin(),
+    // new CompressionPlugin({
+    //   algorithm: "gzip"
+    // }),
+    // new BrotliPlugin(),
   ]
 };

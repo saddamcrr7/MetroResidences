@@ -8,6 +8,7 @@
   background: $metro-black;
   opacity: 0;
   pointer-events: none;
+  will-change: transform;
 
   &__container {
     width: 100vw;
@@ -22,6 +23,7 @@
   &__wrapper {
     width: 1150%;
     height: 100%;
+    will-change: transform;
 
     @include media-breakpoint-down(md) {
       width: 100%;

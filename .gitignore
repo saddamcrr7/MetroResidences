@@ -25,7 +25,7 @@ jspm_packages/
 /coverage
 
 # production
-/dist
+build
 
 # Optional npm cache directory
 .npm
